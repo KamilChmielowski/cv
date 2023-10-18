@@ -12,6 +12,5 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class ProgressBarComponent {
-  @Input() label = '';
   @Input() percent = '0';
 }

@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChipComponent } from './chip/chip.component';
 
 @Component({
-  selector: 'app-soft-skills',
-  templateUrl: './soft-skills.component.html',
-  styleUrls: ['./soft-skills.component.scss'],
+  selector: 'app-chip',
+  templateUrl: './chip.component.html',
+  styleUrls: ['./chip.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
-    ChipComponent,
   ]
 })
-export class SoftSkillsComponent {}
+export class ChipComponent {}
