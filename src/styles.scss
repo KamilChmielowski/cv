@@ -1,9 +1,13 @@
-main, body {
+html, body {
   margin: 0;
-  color: #fff;
+  color: #a5b3ce;
   background-color: #19202e;
   font-family: arial, serif;
   letter-spacing: .05rem;
+}
+
+h1, h2, h3 {
+  color: #fff;
 }
 
 svg-icon {

@@ -1,0 +1,21 @@
+:host {
+  .title {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1rem;
+
+    .icon-wrapper {
+      margin-right: 0.5rem;
+      background-color: #19202e;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+}
