@@ -29,8 +29,24 @@
       padding: 1rem;
       font-size: .875rem;
 
-      li:not(:last-of-type) {
-        margin-right: 1.5rem;
+      li {
+        display: flex;
+        align-items: center;
+        color: #a5b3ce;
+
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+
+        svg-icon {
+          margin-right: 0.5rem;
+
+          ::ng-deep {
+            svg {
+              fill: #a5b3ce;
+            }
+          }
+        }
       }
     }
 
@@ -43,5 +59,4 @@
       border-radius: 50%;
     }
   }
-
 }

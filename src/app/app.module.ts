@@ -1,18 +1,21 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './app/header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AngularSvgIconModule.forRoot(),
     BrowserModule,
-    HeaderComponent
+    HeaderComponent,
+    HttpClientModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
