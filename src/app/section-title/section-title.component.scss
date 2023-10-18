@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
   .title {
     display: flex;
@@ -9,7 +11,7 @@
 
     .icon-wrapper {
       margin-right: 0.5rem;
-      background-color: #19202e;
+      background-color: $color-background-dark;
       width: 2.5rem;
       height: 2.5rem;
       display: flex;
