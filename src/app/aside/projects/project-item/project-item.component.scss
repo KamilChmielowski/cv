@@ -1,0 +1,17 @@
+@import 'variables';
+
+:host {
+  .link {
+    text-decoration: none;
+    color: $color-active;
+    transition: $transition-hover;
+
+    &:hover, &:focus {
+      color: $color-hover;
+    }
+  }
+
+  .desc {
+    font-size: 0.875rem;
+  }
+}

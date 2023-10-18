@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ProjectItemComponent } from './project-item/project-item.component';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -9,6 +11,7 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
+    ProjectItemComponent
   ]
 })
 export class ProjectsComponent {}
