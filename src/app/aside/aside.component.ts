@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { EducationComponent } from './education/education.component';
+import { LanguagesComponent } from './languages/languages.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
+import { SoftSkillsComponent } from './soft-skills/soft-skills.component';
+import { TechStackComponent } from './tech-stack/tech-stack.component';
 
 @Component({
   selector: 'app-aside',
@@ -9,7 +14,12 @@ import { SectionTitleComponent } from '../section-title/section-title.component'
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    SectionTitleComponent
+    EducationComponent,
+    LanguagesComponent,
+    ProjectsComponent,
+    SectionTitleComponent,
+    SoftSkillsComponent,
+    TechStackComponent
   ]
 })
 export class AsideComponent {}
