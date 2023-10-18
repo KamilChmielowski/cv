@@ -1,6 +1,8 @@
+@import 'variables';
+
 :host {
   display: block;
-  background-color: #1e2738;
+  background-color: $color-background;
   margin: 10rem auto 4rem;
   width: 1000px;
 

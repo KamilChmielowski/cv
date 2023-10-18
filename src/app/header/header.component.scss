@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
   header {
     display: flex;
@@ -16,7 +18,7 @@
       font-size: 1.125rem;
       text-transform: uppercase;
       font-weight: 500;
-      color: #a5b3ce;
+      color: $color-text;
       letter-spacing: 0.1rem;
       margin-top: 0;
     }
@@ -24,15 +26,15 @@
     .contact {
       display: inline-flex;
       list-style: none;
-      border-top: 1px solid #FFFFFF33;
-      border-bottom: 1px solid #FFFFFF33;
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
       padding: 1rem;
       font-size: .875rem;
 
       li {
         display: flex;
         align-items: center;
-        color: #a5b3ce;
+        color: $color-text;
 
         &:not(:last-of-type) {
           margin-right: 2rem;
@@ -43,7 +45,7 @@
 
           ::ng-deep {
             svg {
-              fill: #a5b3ce;
+              fill: $color-text;
             }
           }
         }
@@ -55,7 +57,7 @@
       margin-top: calc(-5rem + 8px);
       max-width: 9rem;
       height: auto;
-      border: 8px solid #2c3c59;
+      border: 8px solid $color-background;
       border-radius: 50%;
     }
   }
