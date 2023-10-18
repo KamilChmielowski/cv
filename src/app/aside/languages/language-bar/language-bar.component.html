@@ -1,0 +1,9 @@
+<p class="lang">
+  <ng-content></ng-content>
+</p>
+
+<div class="bar">
+  <span *ngFor="let _ of [].constructor(10); let i = index" class="rect">
+    <span *ngIf="i < +value" class="fill"></span>
+  </span>
+</div>
