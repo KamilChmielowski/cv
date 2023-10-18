@@ -1,0 +1,8 @@
+:host {
+  app-project-item {
+    &:first-of-type {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}

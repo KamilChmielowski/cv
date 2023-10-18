@@ -5,9 +5,25 @@
     text-decoration: none;
     color: $color-active;
     transition: $transition-hover;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    .dot {
+      width: 0.6rem;
+      height: 0.6rem;
+      background-color: $color-active;
+      transition: $transition-hover;
+      border-radius: 0.1rem;
+      margin-right: 0.5rem;
+    }
 
     &:hover, &:focus {
       color: $color-hover;
+
+      .dot {
+        background-color: $color-hover;
+      }
     }
   }
 
