@@ -1,0 +1,12 @@
+@import 'variables';
+
+:host {
+  .name {
+    color: $color-active;
+  }
+
+  .desc {
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+  }
+}
