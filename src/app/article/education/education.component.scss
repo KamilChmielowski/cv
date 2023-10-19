@@ -1,12 +1,16 @@
 @import 'variables';
 
 :host {
+  app-section-title {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
   .name {
     color: $color-active;
   }
 
   .desc {
-    font-size: 0.875rem;
     margin: 0.5rem 0;
   }
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { EducationComponent } from './education/education.component';
+import { EducationComponent } from '../article/education/education.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
