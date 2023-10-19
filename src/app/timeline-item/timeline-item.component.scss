@@ -1,0 +1,54 @@
+@import 'variables';
+
+:host {
+  .content {
+    padding-left: 2.5rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: calc(100% + 10px);
+      background: $color-background-dark;
+      left: 13px;
+      top: 16px;
+      position: absolute;
+    }
+
+    .desc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0.5rem;
+        top: calc(0.4rem + 2px);
+        width: 0.6rem;
+        height: 0.6rem;
+        border: 2px solid $color-text;
+        background: rgba(0,0,0,.3);
+        border-radius: 50%;
+      }
+
+      .date {
+        margin-top: 0;
+      }
+
+      .chip {
+        background: $color-background-dark;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        font-weight: 600;
+        margin-top: 0;
+      }
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}

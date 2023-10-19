@@ -1,0 +1,12 @@
+<div class="content">
+  <div class="desc">
+    <p class="date">{{ date }}</p>
+    <p *ngIf="chip" class="chip">{{ chip }}</p>
+  </div>
+
+  <h3>{{ header }}</h3>
+
+  <p>
+    <ng-content></ng-content>
+  </p>
+</div>

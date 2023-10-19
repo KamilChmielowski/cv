@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { SectionTitleComponent } from '../../section-title/section-title.component';
+import { TimelineItemComponent } from '../../timeline-item/timeline-item.component';
 
 @Component({
   selector: 'app-work-experience',
@@ -10,6 +11,7 @@ import { SectionTitleComponent } from '../../section-title/section-title.compone
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     SectionTitleComponent,
+    TimelineItemComponent,
   ]
 })
 export class WorkExperienceComponent {}
