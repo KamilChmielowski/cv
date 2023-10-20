@@ -1,0 +1,47 @@
+@import 'variables';
+
+:host {
+  .copy {
+    cursor: pointer;
+    position: relative;
+    transition: $transition-hover;
+
+    &:hover, &:focus {
+      color: $color-hover;
+    }
+
+    .tooltip {
+      position: absolute;
+      left: 25%;
+      z-index: 1;
+      padding: 0.25rem 1rem;
+      border-radius: 5px;
+      background: $color-background-dark;
+      opacity: 0;
+      color: $color-text;
+      font-size: 0.875rem;
+      transition: opacity 500ms, transform 500ms;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -9px;
+        left: calc(50% - 10px);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $color-background-dark;
+      }
+    }
+  }
+}
+
+:host-context(.tooltip-visible) {
+  .copy {
+    .tooltip {
+      opacity: 1;
+      transform: translateY(2rem);
+    }
+  }
+}

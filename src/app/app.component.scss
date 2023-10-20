@@ -9,6 +9,7 @@
   main {
     display: flex;
     padding: 0 2rem 4rem;
+    margin: 1rem 0;
 
     app-article {
       border-right: 1px solid $color-border;

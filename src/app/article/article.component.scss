@@ -2,11 +2,16 @@
 
 :host {
   article {
-    margin: 1rem 0;
+    section {
+      &:not(:last-of-type) {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $color-border;
+      }
 
-    app-education {
-      display: block;
-      margin-top: 3rem;
+      &:nth-of-type(2) {
+        padding-bottom: 3rem;
+      }
     }
   }
 }
