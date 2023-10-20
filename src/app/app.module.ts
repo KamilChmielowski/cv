@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './article/article.component';
-import { AsideComponent } from './aside/aside.component';
-import { HeaderComponent } from './header/header.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SectionTitleComponent } from './section-title/section-title.component';
+import { ArticleComponent } from './components/article/article.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
 
 @NgModule({
   declarations: [
