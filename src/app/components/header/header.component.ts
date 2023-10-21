@@ -5,6 +5,7 @@ import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ChangeLangComponent } from './change-lang/change-lang.component';
+import { ChangeThemeComponent } from './change-theme/change-theme.component';
 import { CopyTextComponent } from './copy-text/copy-text.component';
 
 @Component({
@@ -15,6 +16,7 @@ import { CopyTextComponent } from './copy-text/copy-text.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ChangeLangComponent,
+    ChangeThemeComponent,
     CommonModule,
     CopyTextComponent,
     SvgIconComponent,

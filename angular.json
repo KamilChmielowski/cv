@@ -25,7 +25,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              {
+                "input": "src/styles/themes/light.scss",
+                "bundleName": "light",
+                "inject": false
+              },
+              {
+                "input": "src/styles/themes/dark.scss",
+                "bundleName": "dark",
+                "inject": false
+              }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

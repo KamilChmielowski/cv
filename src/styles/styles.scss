@@ -41,5 +41,18 @@ a {
 
   &:hover, &:focus {
     color: $color-hover;
+    cursor: pointer;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  transition: $transition-hover;
+
+  &:hover, &:focus {
+    color: $color-hover;
+    cursor: pointer;
   }
 }

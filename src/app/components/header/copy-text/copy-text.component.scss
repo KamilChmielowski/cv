@@ -5,6 +5,8 @@
     cursor: pointer;
     position: relative;
     transition: $transition-hover;
+    color: $color-text;
+    font-size: 1rem;
 
     &:hover, &:focus {
       color: $color-hover;
