@@ -1,19 +1,19 @@
-<app-section-title title="Education" icon="education"></app-section-title>
+<app-section-title [title]="'article.education.title' | translate" icon="education"></app-section-title>
 
-<app-timeline-item date="2019 - 2021" chip="(M.S.)" header="Computer Science">
-  <p class="desc">Silesian University of Technology, Gliwice</p>
+<app-timeline-item date="2019 - 2021" chip="(M.S.)" [header]="'article.education.computer-science' | translate">
+  <p class="desc">{{ 'article.education.university' | translate }}</p>
 
-  <p class="desc">Faculty of Automatic Control, Electronics and Computer Science</p>
+  <p class="desc">{{ 'article.education.faculty-1' | translate }}</p>
 </app-timeline-item>
 
-<app-timeline-item date="2015 - 2019" chip="(B.S.)" header="Computer Science">
-  <p class="desc">Silesian University of Technology, Gliwice</p>
+<app-timeline-item date="2015 - 2019" chip="(B.S.)" [header]="'article.education.computer-science' | translate">
+  <p class="desc">{{ 'article.education.university' | translate }}</p>
 
-  <p class="desc">Faculty of Electrical Engineering</p>
+  <p class="desc">{{ 'article.education.faculty-2' | translate }}</p>
 </app-timeline-item>
 
-<app-timeline-item date="2013 - 2017" chip="(B.S.)" header="Automation and Robotics">
-  <p class="desc">Silesian University of Technology, Gliwice</p>
+<app-timeline-item date="2013 - 2017" chip="(B.S.)" [header]="'article.education.automation' | translate">
+  <p class="desc">{{ 'article.education.university' | translate }}</p>
 
-  <p class="desc">Faculty of Mechanical Engineering</p>
+  <p class="desc">{{ 'article.education.faculty-3' | translate }}</p>
 </app-timeline-item>

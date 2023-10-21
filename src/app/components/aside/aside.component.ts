@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { EducationComponent } from '../article/education/education.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -19,7 +21,8 @@ import { TechStackComponent } from './tech-stack/tech-stack.component';
     ProjectsComponent,
     SectionTitleComponent,
     SoftSkillsComponent,
-    TechStackComponent
+    TechStackComponent,
+    TranslateModule,
   ]
 })
 export class AsideComponent {}

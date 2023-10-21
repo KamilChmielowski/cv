@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-copy-text',
   templateUrl: './copy-text.component.html',
@@ -11,6 +13,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     ClipboardModule,
+    TranslateModule,
   ]
 })
 export class CopyTextComponent {

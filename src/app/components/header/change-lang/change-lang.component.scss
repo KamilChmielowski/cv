@@ -1,0 +1,19 @@
+:host {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 2rem;
+    display: flex;
+
+    &:first-of-type {
+      margin-bottom: 1rem;
+    }
+
+    svg-icon {
+      width: 2rem;
+      height: inherit;
+      cursor: pointer;
+    }
+  }
+}

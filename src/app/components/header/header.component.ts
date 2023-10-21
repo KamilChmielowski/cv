@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { SvgIconComponent } from 'angular-svg-icon';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { ChangeLangComponent } from './change-lang/change-lang.component';
 import { CopyTextComponent } from './copy-text/copy-text.component';
 
 @Component({
@@ -10,9 +14,11 @@ import { CopyTextComponent } from './copy-text/copy-text.component';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    ChangeLangComponent,
     CommonModule,
-    SvgIconComponent,
     CopyTextComponent,
+    SvgIconComponent,
+    TranslateModule,
   ]
 })
 export class HeaderComponent {}

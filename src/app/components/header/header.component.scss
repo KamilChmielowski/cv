@@ -6,6 +6,13 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    app-change-lang {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
 
     .name {
       letter-spacing: .2rem;

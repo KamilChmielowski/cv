@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChipComponent } from './chip/chip.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-soft-skills',
@@ -8,9 +9,10 @@ import { ChipComponent } from './chip/chip.component';
   styleUrls: ['./soft-skills.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    ChipComponent,
-  ]
+    imports: [
+        CommonModule,
+        ChipComponent,
+        TranslateModule,
+    ]
 })
 export class SoftSkillsComponent {}

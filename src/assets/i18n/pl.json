@@ -1,0 +1,50 @@
+{
+  "header": {
+    "position": "Programista web / full stack",
+    "about-me": {
+      "title": "O mnie",
+      "desc": "<p>Jestem programistą webowym z ponad {{ years }} letnim doświadczeniem komercyjnym zdobytym w globalnym polskim software house.</p><p>Moją najmocniejszą stroną jest framework Angular ale powiadam również doświaczenie z technologiami Node, MongoDB (rozbudowana platforma internetowa na produkcji) oraz przykładowe (sprawdź mój GitHub) aplikacje webowe zaimplementowane w React, Vue, REST API z użyciem Express. Jestem zainteresowany zarówno techologiami frontend jak i backend.</p><p>Prywatnie spędzam czas przy literaturze faktu oraz popularnonaukowej, starożytnej grece i egzegezie biblijnej.</p><p>Jestem również autorem szerokiem platformy internetowej <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, samodzielnie zbudowanej i wdrożonej od podstaw (Angular 2+, REST API, Node.js + Express, MongoDB, Firebase, Heroku).</p>"
+
+    },
+    "copy-text": {
+      "tooltip": "skopiowano!"
+    }
+  },
+  "article": {
+    "work-experience": {
+      "title": "Doświadczenie zawodowe"
+    },
+    "education": {
+      "title": "Wykształcenie",
+      "computer-science": "Informatyka",
+      "automation": "Automatyka i Robotyka",
+      "university": "Politechnika Śląska, Gliwice",
+      "faculty-1": "Wydział Automatyki, Elektroniki i Informatyki",
+      "faculty-2": "Wydział Elektryczny",
+      "faculty-3": "Wydział Mechaniczny Technologiczny"
+    }
+  },
+  "aside": {
+    "tech-stack": "Stos technologiczny",
+    "soft-skills": {
+      "title": "Umiejętności miękkie",
+      "project-management": "Zarządzanie projektem",
+      "leadership": "Przywódctwo",
+      "team-working": "Praca zespołowa",
+      "communicativeness": "Komunikatywność"
+    },
+    "projects": {
+      "title": "Projekty",
+      "project-1": "Narzędzia do studiowania grecki i hebrajskiego, konkordancje, komentarze, słowniki. Techologie: Angular, Node + Express, MongoDB",
+      "project-2": "Możesz zobaczyć kod źródłowy w repozytorium Github."
+    },
+    "languages": {
+      "title": "Języki",
+      "pl": "Polski (ojczysty)",
+      "en": "Angielski"
+    }
+  },
+  "footer": {
+    "copyright": "Prawa autorskie szablonu"
+  }
+}

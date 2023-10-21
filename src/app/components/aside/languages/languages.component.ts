@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { LanguageBarComponent } from './language-bar/language-bar.component';
 
 @Component({
@@ -12,6 +14,7 @@ import { LanguageBarComponent } from './language-bar/language-bar.component';
   imports: [
     CommonModule,
     LanguageBarComponent,
+    TranslateModule,
   ]
 })
 export class LanguagesComponent {}

@@ -1,0 +1,49 @@
+{
+  "header": {
+    "position": "Web / full stack Developer",
+    "about-me": {
+      "title": "About me",
+      "desc": "<p>I'm a web developer with over {{ years }} years of commercial experience gained in global polish software house.</p><p>My strongest point is Angular framework but I've also some experience with Node and MongoDB (private large app on production) and some sample (check my GitHub) web applications implemented in React and Vue and REST API with Express. I am interested in both web and full-stack development.</p><p>My interests include non-fiction and popular science, ancient Greek and biblical exegesis.</p><p> I'm also author of wide web platform <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, built and deployed with my own from scratch (Angular 2+, REST API with Node.js + Express, MongoDB, Firebase, Heroku).</p>"
+    },
+    "copy-text": {
+      "tooltip": "copied!"
+    }
+  },
+  "article": {
+    "work-experience": {
+      "title": "Work experience"
+    },
+    "education": {
+      "title": "Education",
+      "computer-science": "Computer Science",
+      "automation": "Automation and Robotics",
+      "university": "Silesian University of Technology, Gliwice",
+      "faculty-1": "Faculty of Automatic Control, Electronics and Computer Science",
+      "faculty-2": "Faculty of Electrical Engineering",
+      "faculty-3": "Faculty of Mechanical Engineering"
+    }
+  },
+  "aside": {
+    "tech-stack": "Tech stack",
+    "soft-skills": {
+      "title": "Soft skills",
+      "project-management": "Project management",
+      "leadership": "Leadership",
+      "team-working": "Team working",
+      "communicativeness": "Communicativeness"
+    },
+    "projects": {
+      "title": "Projects",
+      "project-1": "Greek and Hebrew study tools, concordances, commentaries, dictionaries. Stack: Angular, Node + Express, MongoDB",
+      "project-2": "Please check out project's code on my Github page."
+    },
+    "languages": {
+      "title": "Languages",
+      "pl": "Polish (native)",
+      "en": "English"
+    }
+  },
+  "footer": {
+    "copyright": "Template Copyright"
+  }
+}

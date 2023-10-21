@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 import { CurrentYearService } from '../../../services/current-year/current-year.service';
 import { SectionTitleComponent } from '../../section-title/section-title.component';
@@ -10,7 +13,9 @@ import { SectionTitleComponent } from '../../section-title/section-title.compone
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    CommonModule,
     SectionTitleComponent,
+    TranslateModule,
   ]
 })
 export class AboutMeComponent implements OnInit {

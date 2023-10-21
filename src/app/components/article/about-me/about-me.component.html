@@ -1,19 +1,3 @@
-<app-section-title title="About me" icon="about"></app-section-title>
+<app-section-title [title]="'header.about-me.title' | translate" icon="about"></app-section-title>
 
-<p>
-  I'm a web developer with over {{ currentYear - 2017 }} years of commercial experience gained in global polish software house.
-</p>
-
-<p>
-  My strongest point is Angular framework but I've also some experience with Node and MongoDB (private large app on production)
-  and some sample (check my GitHub) web applications implemented in React and Vue and REST API with Express. I am interested in both
-  web and full-stack development.
-</p>
-
-<p>
-  My interests include non-fiction and popular science, ancient Greek and biblical exegesis.
-</p>
-
-<p>
-  I'm also author of wide web platform https://apologetykabiblijna.pl, built and deployed with my own from scratch (Angular 2+, REST API with Node.js + Express, MongoDB, Firebase, Heroku).
-</p>
+<span [innerHTML]="'header.about-me.desc' | translate: { years: currentYear - 2017 }"></span>

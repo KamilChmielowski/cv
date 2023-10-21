@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { SectionTitleComponent } from '../../section-title/section-title.component';
 import { TimelineItemComponent } from '../../timeline-item/timeline-item.component';
 
@@ -12,6 +14,7 @@ import { TimelineItemComponent } from '../../timeline-item/timeline-item.compone
   imports: [
     SectionTitleComponent,
     TimelineItemComponent,
+    TranslateModule,
   ]
 })
 export class WorkExperienceComponent {}
