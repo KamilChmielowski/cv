@@ -35,7 +35,7 @@
     "projects": {
       "title": "Projects",
       "project-1": "Greek and Hebrew study tools, concordances, commentaries, dictionaries. Stack: Angular, Node + Express, MongoDB",
-      "project-2": "Please check out project's code on my Github page."
+      "project-2": "My CV in two language versions (ngx-translate), features: dark & light mode using css vars, server date from public <a href=\"https://world-clock.p.rapidapi.com/json/utc/now\" target=\"_blank\">API</a>"
     },
     "languages": {
       "title": "Languages",

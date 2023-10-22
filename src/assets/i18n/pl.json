@@ -4,7 +4,6 @@
     "about-me": {
       "title": "O mnie",
       "desc": "<p>Jestem programistą webowym z ponad {{ years }} letnim doświadczeniem komercyjnym zdobytym w globalnym, polskim 'software house'.</p><p>Moją najmocniejszą stroną jest framework Angular, ale posiadam również doświaczenie z technologiami Node i MongoDB (rozbudowana platforma internetowa na produkcji) oraz stworzyłem przykładowe aplikacje webowe (sprawdź mój GitHub) zaimplementowane w React, Vue, REST API z użyciem Express. Interesują mnie zarówno techologie frontend jak i backend.</p><p>Prywatnie spędzam czas przy literaturze faktu oraz popularnonaukowej, starożytnej grece i egzegezie biblijnej.</p><p>Jestem również autorem rozbudowanej platformy internetowej <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, samodzielnie zbudowanej i wdrożonej od podstaw (Angular 2+, REST API, Node.js + Express, MongoDB, Firebase, Heroku).</p>"
-
     },
     "copy-text": {
       "tooltip": "skopiowano!"
@@ -36,7 +35,7 @@
     "projects": {
       "title": "Projekty",
       "project-1": "Narzędzia do studiowania grecki i hebrajskiego, konkordancje, komentarze, słowniki. Techologie: Angular, Node + Express, MongoDB",
-      "project-2": "Możesz zobaczyć kod źródłowy w repozytorium Github."
+      "project-2": "Moje CV w dwóch wersjach językowych (ngx-translate), cechy: ciemny i jasny szablon z użyciem css vars, data serwera z publicznego <a href=\"https://world-clock.p.rapidapi.com/json/utc/now\" target=\"_blank\">API</a>"
     },
     "languages": {
       "title": "Języki",
