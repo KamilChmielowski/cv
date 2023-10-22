@@ -45,11 +45,35 @@
       color: $color-text;
       letter-spacing: 0.1rem;
       margin-top: 0;
+      margin-bottom: 0.5rem;
 
       @include portrait-tablet() {
         line-height: 1.1;
         text-align: center;
         padding: 0 0.4rem;
+      }
+    }
+
+    .location {
+      font-weight: 500;
+      color: $color-text;
+      letter-spacing: 0.1rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+
+      @include portrait-tablet() {
+        line-height: 1.1;
+        text-align: center;
+        padding: 0 0.4rem;
+      }
+
+      svg-icon {
+        margin-right: 0.3rem;
+
+        svg {
+          fill: $color-text;
+        }
       }
     }
 
