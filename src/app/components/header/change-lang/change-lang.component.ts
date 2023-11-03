@@ -19,7 +19,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class ChangeLangComponent {
   constructor(private translate: TranslateService) {}
 
-  changeLang(lang: string) {
+  changeLang(lang: string, elementToFocus: HTMLButtonElement): void {
     this.translate.use(lang);
+    elementToFocus.focus();
   }
 }
