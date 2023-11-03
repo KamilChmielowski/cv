@@ -17,19 +17,25 @@
     <li>
       <svg-icon name="phone"></svg-icon>
 
-      <app-copy-text text="+48 459 413 344" copyText="48 459 413 344"></app-copy-text>
+      <app-copy-text [aria]="'header.aria.tel' | translate"
+                     copyText="48 459 413 344"
+                     text="+48 459 413 344"
+      ></app-copy-text>
     </li>
 
     <li>
       <svg-icon name="email"></svg-icon>
 
-      <app-copy-text text="kamilchmielowski94@gmail.com"></app-copy-text>
+      <app-copy-text [aria]="'header.aria.email' | translate" text="kamilchmielowski94@gmail.com"></app-copy-text>
     </li>
 
     <li>
       <svg-icon name="website"></svg-icon>
 
-      <app-copy-text text="kamilchmielowski.website.com" copyText="https://kamilchmielowski.website.com"></app-copy-text>
+      <app-copy-text [aria]="'header.aria.website' | translate"
+                     copyText="https://kamilchmielowski.website.com"
+                     text="kamilchmielowski.website.com"
+      ></app-copy-text>
     </li>
   </ul>
 </header>

@@ -5,6 +5,7 @@ import { SvgIconComponent } from 'angular-svg-icon';
 
 import { Theme, ThemeUrlPipe } from './theme-url.pipe';
 import { ThemeLiteralPipe } from './theme-value.pipe';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-theme',
@@ -16,6 +17,7 @@ import { ThemeLiteralPipe } from './theme-value.pipe';
     ThemeUrlPipe,
     SvgIconComponent,
     ThemeLiteralPipe,
+    TranslateModule,
   ]
 })
 export class ChangeThemeComponent {

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SvgIconComponent } from 'angular-svg-icon';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-lang',
@@ -13,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   imports: [
     CommonModule,
     SvgIconComponent,
+    TranslateModule,
   ]
 })
 export class ChangeLangComponent {

@@ -7,6 +7,14 @@
     },
     "copy-text": {
       "tooltip": "skopiowano!"
+    },
+    "aria": {
+      "pl": "otwórz stronę w języku polskim",
+      "en": "otwórz stronę w języku angielskim",
+      "theme": "zmień kolorystykę strony",
+      "tel": "skopiuj numer telefonu",
+      "email": "skopiuj adres email",
+      "website": "Skopiuj adres strony autora"
     }
   },
   "article": {

@@ -17,6 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ]
 })
 export class CopyTextComponent {
+  @Input() aria = '';
   @Input() copyText? = '';
   @Input() text = '';
 

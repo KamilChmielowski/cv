@@ -1,5 +1,5 @@
 <link [href]="theme | themeUrl" type="text/css" rel="stylesheet">
 
-<button>
-  <svg-icon [name]="theme | themeValue" (click)="changeTheme()"></svg-icon>
+<button (click)="changeTheme()" [attr.aria-label]="'header.aria.theme' | translate">
+  <svg-icon [name]="theme | themeValue"></svg-icon>
 </button>

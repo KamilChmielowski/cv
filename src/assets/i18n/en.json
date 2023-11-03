@@ -7,6 +7,14 @@
     },
     "copy-text": {
       "tooltip": "copied!"
+    },
+    "aria": {
+      "pl": "open website in polish",
+      "en": "open website in english",
+      "theme": "change website's theme",
+      "tel": "copy telephone number",
+      "email": "copy email address",
+      "website": "copy author's website"
     }
   },
   "article": {
