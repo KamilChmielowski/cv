@@ -13,4 +13,4 @@ This project is my web CV version, implemented in Angular 16.
 
 * +48 459 413 344
 * kamilchmielowski94@gmail.com
-* kamilchmielowski.website.com
+* https://kamilchmielowski-dev.web.app/
