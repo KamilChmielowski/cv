@@ -1,7 +1,25 @@
-<app-project-item title="Apologetyka Biblijna (prod)" href="https:apologetykabiblijna.pl">
+<app-project-item
+  title="Apologetyka Biblijna (prod)"
+  href="https:apologetykabiblijna.pl"
+  [chips]="['angular', 'mongo', 'express']">
   <span [innerHTML]="'aside.projects.project-1' | translate"></span>
 </app-project-item>
 
-<app-project-item title="Curriculum vitae (Angular)" href="https://github.com/KamilChmielowski/cv">
+<app-project-item title="Bezpieczna Przystań (prod)"
+                  href="https:bezpiecznaprzystan.net"
+                  [chips]="['angular']">
   <span [innerHTML]="'aside.projects.project-2' | translate"></span>
 </app-project-item>
+
+<app-project-item title="Curriculum vitae"
+                  href="https://github.com/KamilChmielowski/cv"
+                  [chips]="['angular']">
+  <span [innerHTML]="'aside.projects.project-3' | translate"></span>
+</app-project-item>
+
+<app-project-item title="Weather app"
+                  href="https://github.com/KamilChmielowski/weather"
+                  [chips]="['angular']">
+  <span [innerHTML]="'aside.projects.project-4' | translate"></span>
+</app-project-item>
+

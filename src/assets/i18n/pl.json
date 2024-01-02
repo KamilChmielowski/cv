@@ -42,8 +42,10 @@
     },
     "projects": {
       "title": "Projekty",
-      "project-1": "Narzędzia do studiowania grecki i hebrajskiego, konkordancje, komentarze, słowniki. Techologie: Angular, Node + Express, MongoDB",
-      "project-2": "Moje CV w dwóch wersjach językowych (ngx-translate), cechy: ciemny i jasny szablon z użyciem css vars, data serwera z publicznego <a href=\"https://world-clock.p.rapidapi.com/json/utc/now\" target=\"_blank\">API</a>"
+      "project-1": "Duża aplikacja udostępniająca narzędzia do studiowania grecki i hebrajskiego, konkordancje.",
+      "project-2": "Śpiewnik w dwóch wersjach: <a href=\"https://bezpiecznaprzystan.net\" target=\"_blank\">Bezpieczna Przystań</a>, <a href=\"https://spiewnikpielgrzyma.pl\" target=\"_blank\">Śpiewnik Pielgrzyma</a>",
+      "project-3": "Moje CV w dwóch wersjach językowych.",
+      "project-4": "Złożona aplikacja łącząca kilka publicznych API geolokacji."
     },
     "languages": {
       "title": "Języki",
