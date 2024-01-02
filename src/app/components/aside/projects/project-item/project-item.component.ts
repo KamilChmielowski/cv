@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SvgIconComponent } from 'angular-svg-icon';
+
 import { ItemChipsComponent } from './item-chips/item-chips.component';
 
 @Component({
@@ -12,10 +14,12 @@ import { ItemChipsComponent } from './item-chips/item-chips.component';
   imports: [
     CommonModule,
     ItemChipsComponent,
+    SvgIconComponent,
   ]
 })
 export class ProjectItemComponent {
   @Input() title = '';
   @Input() href = '';
   @Input() chips?: string[];
+  @Input() githubUrl?: string;
 }

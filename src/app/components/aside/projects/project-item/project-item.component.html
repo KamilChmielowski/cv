@@ -1,6 +1,12 @@
-<a [href]="href" class="link">
-  <span class="dot"></span>{{ title }}
-</a>
+<div class="references">
+  <a [href]="href" class="link">
+    <span class="dot"></span>{{ title }}
+  </a>
+
+  <a *ngIf="githubUrl" [href]="githubUrl">
+    <svg-icon name="github"></svg-icon>
+  </a>
+</div>
 
 <app-item-chips [chips]="chips"></app-item-chips>
 

@@ -1,28 +1,34 @@
 @import 'variables';
 
 :host {
-  .link {
-    text-decoration: none;
-    color: $color-active;
-    transition: $transition-hover;
-    font-weight: 600;
+  .references {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    .dot {
-      width: 0.6rem;
-      height: 0.6rem;
-      background-color: $color-active;
+    .link {
+      display: inline-flex;
+      text-decoration: none;
+      color: $color-active;
       transition: $transition-hover;
-      border-radius: 0.1rem;
-      margin-right: 0.5rem;
-    }
-
-    &:hover, &:focus {
-      color: $color-hover;
+      font-weight: 600;
+      align-items: center;
 
       .dot {
-        background-color: $color-hover;
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: $color-active;
+        transition: $transition-hover;
+        border-radius: 0.1rem;
+        margin-right: 0.5rem;
+      }
+
+      &:hover, &:focus {
+        color: $color-hover;
+
+        .dot {
+          background-color: $color-hover;
+        }
       }
     }
   }
