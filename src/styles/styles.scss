@@ -61,5 +61,11 @@ button {
   &:hover, &:focus {
     color: $color-hover;
     cursor: pointer;
+
+    svg-icon {
+      svg {
+        fill: $color-hover;
+      }
+    }
   }
 }

@@ -3,7 +3,11 @@
     "position": "Web / full stack Developer",
     "about-me": {
       "title": "About me",
-      "desc": "<p>I am a web developer with more than {{ years }} years of commercial experience gained in the global polish software house.</p><p>My strongest point is Angular framework but I have also some experience with Node and MongoDB (private large app on production). I have developed some sample web applications (check my GitHub) implemented in React, Vue and REST API with Express. I am interested both in frontend and backend development.</p><p>My interests include non-fiction and popular science literature, ancient Greek and biblical exegesis.</p><p> I am also an author of extensive web platform <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, built and deployed on my own from scratch (Angular 2+, REST API with Node.js + Express, MongoDB, Firebase, Heroku).</p>"
+      "desc": "<p>I am a web developer with more than {{ years }} years of commercial experience gained in the global polish software house.</p><p>My strongest point is Angular framework but I have also some experience with Node and MongoDB (private large app on production). I have developed some sample web applications (check my GitHub) implemented in React, Vue and REST API with Express. I am interested both in frontend and backend development.</p><p>My interests include non-fiction and popular science literature, ancient Greek and biblical exegesis.</p><p> I am also an author of extensive web platform <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, built and deployed on my own from scratch (Angular 2+, REST API with Node.js + Express, MongoDB, Firebase, Heroku).</p>",
+      "aria": {
+        "github": "link to my github account",
+        "linkedin": "link to my linkedin account"
+      }
     },
     "copy-text": {
       "tooltip": "copied!"

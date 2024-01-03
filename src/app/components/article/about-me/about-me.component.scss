@@ -1,0 +1,21 @@
+:host {
+  position: relative;
+
+  .references {
+    position: absolute;
+    top: 1.25rem;
+
+    &.ref-1 {
+      right: 2.5rem;
+    }
+
+    &.ref-2 {
+      right: 0;
+    }
+
+    svg-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

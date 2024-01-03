@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CurrentYearService } from '../../../services/current-year/current-year.service';
@@ -15,6 +16,7 @@ import { SectionTitleComponent } from '../../section-title/section-title.compone
   imports: [
     CommonModule,
     SectionTitleComponent,
+    SvgIconComponent,
     TranslateModule,
   ]
 })
