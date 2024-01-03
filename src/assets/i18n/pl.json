@@ -19,7 +19,8 @@
   },
   "article": {
     "work-experience": {
-      "title": "Doświadczenie zawodowe"
+      "title": "Doświadczenie zawodowe",
+      "desc": "Implementacja złożonych aplikacji webowych do zarządzania lojalnością."
     },
     "education": {
       "title": "Wykształcenie",
