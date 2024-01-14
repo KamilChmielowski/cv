@@ -1,5 +1,5 @@
 <button class="copy" [cdkCopyToClipboard]="copyText || text" (click)="showTooltip()" [attr.aria-label]="aria">
-  {{ text }}
+  <span class="text">{{ text }}</span>
 
   <span class="tooltip">{{ 'header.copy-text.tooltip' | translate }}</span>
 </button>

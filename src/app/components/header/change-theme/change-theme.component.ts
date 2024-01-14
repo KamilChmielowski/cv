@@ -1,24 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { SvgIconComponent } from 'angular-svg-icon';
-
-import { Theme, ThemeUrlPipe } from './theme-url.pipe';
-import { ThemeLiteralPipe } from './theme-value.pipe';
-import { TranslateModule } from '@ngx-translate/core';
+import { CopyTextImports } from './change-theme.imports';
+import { Theme } from './theme-url/theme-url.pipe';
 
 @Component({
   selector: 'app-change-theme',
   templateUrl: './change-theme.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    ThemeUrlPipe,
-    SvgIconComponent,
-    ThemeLiteralPipe,
-    TranslateModule,
-  ]
+  imports: [CopyTextImports.imports],
 })
 export class ChangeThemeComponent {
   protected theme = Theme.dark;

@@ -1,7 +1,7 @@
-<button #pl (click)="changeLang('pl', en)" [attr.aria-label]="'header.aria.pl' | translate">
+<button #pl (click)="changeLang('pl', en)" [attr.aria-label]="'header.aria.pl' | translate" class="pl">
   <svg-icon name="pl"></svg-icon>
 </button>
 
-<button #en (click)="changeLang('en', pl)" [attr.aria-label]="'header.aria.en' | translate">
+<button #en (click)="changeLang('en', pl)" [attr.aria-label]="'header.aria.en' | translate" class="en">
   <svg-icon name="en"></svg-icon>
 </button>

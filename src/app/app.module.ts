@@ -11,7 +11,6 @@ import { ArticleComponent } from './components/article/article.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
-import { ThemeUrlPipe } from './components/header/change-theme/theme-url.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -35,7 +34,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    ThemeUrlPipe,
   ],
   bootstrap: [AppComponent]
 })
