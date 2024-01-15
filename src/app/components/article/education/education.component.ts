@@ -12,11 +12,11 @@ import { TimelineItemComponent } from '../../timeline-item/timeline-item.compone
   styleUrls: ['./education.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        CommonModule,
-        SectionTitleComponent,
-        TimelineItemComponent,
-        TranslateModule,
-    ]
+  imports: [
+    CommonModule,
+    SectionTitleComponent,
+    TimelineItemComponent,
+    TranslateModule,
+  ],
 })
 export class EducationComponent {}

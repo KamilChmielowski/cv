@@ -1,7 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { appIcons } from '../../../app-icons-map';
 import { JasmineUtil } from '../../../utils/jasmine.util';
 import { WorkExperienceComponent } from './work-experience.component';
 
@@ -29,24 +28,14 @@ describe('WorkExperienceComponent', () => {
   });
 
   it('should pass existing icon to app-section-title component', () => {
-    const element = fixture.debugElement.query(By.css('app-section-title'));
-    const iconNames = appIcons.map(icons => icons[0]);
-
-    expect(iconNames.includes(element.componentInstance.icon)).toBeTrue();
+    JasmineUtil.sectionTitleComponentUnitTests().existingIcon(fixture.debugElement.query(By.css('app-section-title')));
   });
 
   it('should pass title and icon inputs to app-section-title component', () => {
-    const element = fixture.debugElement.query(By.css('app-section-title'));
-
-    expect(element.componentInstance.icon).withContext('missing icon input').toBeTruthy();
-    expect(element.componentInstance.title).withContext('missing title input').toBeTruthy();
+    JasmineUtil.sectionTitleComponentUnitTests().requiredInputs(fixture.debugElement.query(By.css('app-section-title')));
   });
 
   it('should pass date, chip, header inputs to app-timeline-item component', () => {
-    const items = fixture.debugElement.queryAll(By.css('app-timeline-item'));
-
-    expect(items.every(item => !!item.componentInstance.date)).withContext('missing chip input').toBeTrue();
-    expect(items.every(item => !!item.componentInstance.chip)).withContext('missing chip input').toBeTrue();
-    expect(items.every(item => !!item.componentInstance.header)).withContext('missing chip input').toBeTrue();
+    JasmineUtil.timelineItemComponentUnitTests().requiredInputs(fixture.debugElement.queryAll(By.css('app-timeline-item')))
   });
 });
