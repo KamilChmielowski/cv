@@ -7,12 +7,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./timeline-item.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-  ]
+  imports: [CommonModule],
 })
 export class TimelineItemComponent {
-  @Input() chip = ''
-  @Input() date = ''
-  @Input() header = ''
+  @Input({ required: true }) chip = ''
+  @Input({ required: true }) date = ''
+  @Input({ required: true }) header = ''
 }

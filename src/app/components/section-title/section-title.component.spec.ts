@@ -23,9 +23,7 @@ describe('SectionTitleComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 
   it('should display defined header content', () => {
     const valueEl = fixture.debugElement.query(By.css('.value'));

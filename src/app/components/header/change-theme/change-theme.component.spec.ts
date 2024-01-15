@@ -21,9 +21,7 @@ describe('ChangeThemeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 
   it('should display existing icons', () => {
     const buttonEl = fixture.debugElement.query(By.css('button'));

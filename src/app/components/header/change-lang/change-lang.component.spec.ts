@@ -24,9 +24,7 @@ describe('ChangeLangComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 
   it('should change lang upon click', () => {
     const buttonPlEl = fixture.debugElement.query(By.css('button.pl'));
