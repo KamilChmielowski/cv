@@ -1,31 +1,22 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { appIcons } from '../../../app-icons-map';
 import { ChangeLangComponent } from './change-lang.component';
 import { ChangeLangImports } from './change-lang.imports';
+import { JasmineUtil } from '../../../utils/jasmine.util';
 
 describe('ChangeLangComponent', () => {
   let component: ChangeLangComponent;
   let fixture: ComponentFixture<ChangeLangComponent>;
   let translateService: TranslateService;
-  let svgIconRegistryServiceSpy = jasmine.createSpyObj( ['getSvgByName'] );
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        ChangeLangImports.imports,
-        TranslateTestingModule
-          .withTranslations('en', require('../../../../assets/i18n/en.json'))
-          .withTranslations('pl', require('../../../../assets/i18n/pl.json')),
-      ],
-      providers: [
-        { provide: SvgIconRegistryService, useValue: svgIconRegistryServiceSpy }
-      ],
+      imports: [JasmineUtil.moduleWithTranslations(ChangeLangImports.imports)],
+      providers: [JasmineUtil.svgIconSpyProvider()],
     });
     fixture = TestBed.createComponent(ChangeLangComponent);
     component = fixture.componentInstance;

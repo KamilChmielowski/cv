@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { catchError, map, Observable, of } from 'rxjs';
+
 import { CurrentYearResponse } from './current-year.model';
 
 @Injectable({ providedIn: 'root' })

@@ -2,29 +2,19 @@ import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
-import { SvgIconRegistryService } from 'angular-svg-icon';
-import { TranslateTestingModule } from 'ngx-translate-testing';
-
 import { appIcons } from '../../../app-icons-map';
 import { ChangeThemeComponent } from './change-theme.component';
 import { CopyTextImports } from '../copy-text/copy-text.imports';
+import { JasmineUtil } from '../../../utils/jasmine.util';
 
 describe('ChangeThemeComponent', () => {
   let component: ChangeThemeComponent;
   let fixture: ComponentFixture<ChangeThemeComponent>;
-  let svgIconRegistryServiceSpy = jasmine.createSpyObj( ['getSvgByName'] );
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CopyTextImports.imports,
-        TranslateTestingModule
-          .withTranslations('en', require('../../../../assets/i18n/en.json'))
-          .withTranslations('pl', require('../../../../assets/i18n/pl.json')),
-      ],
-      providers: [
-        { provide: SvgIconRegistryService, useValue: svgIconRegistryServiceSpy }
-      ]
+      imports: [JasmineUtil.moduleWithTranslations(CopyTextImports.imports)],
+      providers: [JasmineUtil.svgIconSpyProvider()],
     });
     fixture = TestBed.createComponent(ChangeThemeComponent);
     component = fixture.componentInstance;

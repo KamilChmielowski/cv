@@ -11,10 +11,9 @@ import {
   waitForAsync
 } from '@angular/core/testing';
 
-import { TranslateTestingModule } from 'ngx-translate-testing';
-
 import { CopyTextComponent } from './copy-text.component';
 import { CopyTextImports } from './copy-text.imports';
+import { JasmineUtil } from '../../../utils/jasmine.util';
 
 describe('CopyTextComponent', () => {
   let component: CopyTextComponent;
@@ -24,12 +23,7 @@ describe('CopyTextComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        CopyTextImports.imports,
-        TranslateTestingModule
-          .withTranslations('en', require('../../../../assets/i18n/en.json'))
-          .withTranslations('pl', require('../../../../assets/i18n/pl.json')),
-      ],
+      imports: [JasmineUtil.moduleWithTranslations(CopyTextImports.imports)],
       providers: [
         { provide: ComponentFixtureAutoDetect, useValue: true },
         { provide: Clipboard, useValue: clipboardSpy },

@@ -2,24 +2,18 @@ import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SvgIconRegistryService } from 'angular-svg-icon';
-
+import { JasmineUtil } from '../../utils/jasmine.util';
 import { SectionTitleComponent } from './section-title.component';
 import { SectionTitleImports } from './section-title.imports';
 
 describe('SectionTitleComponent', () => {
   let component: SectionTitleComponent;
   let fixture: ComponentFixture<SectionTitleComponent>;
-  let svgIconRegistryServiceSpy = jasmine.createSpyObj( ['getSvgByName'] );
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SectionTitleImports.imports,
-      ],
-      providers: [
-        { provide: SvgIconRegistryService, useValue: svgIconRegistryServiceSpy }
-      ],
+      imports: [SectionTitleImports.imports],
+      providers: [JasmineUtil.svgIconSpyProvider()],
     }).overrideComponent(SectionTitleComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();

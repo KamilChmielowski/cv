@@ -1,29 +1,19 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SvgIconRegistryService } from 'angular-svg-icon';
-import { TranslateTestingModule } from 'ngx-translate-testing';
-
 import { appIcons } from '../../app-icons-map';
 import { HeaderComponent } from './header.component';
 import { HeaderImports } from './header.imports';
+import { JasmineUtil } from '../../utils/jasmine.util';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  const svgIconRegistryServiceSpy = jasmine.createSpyObj( ['getSvgByName'] );
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HeaderImports.imports,
-        TranslateTestingModule
-          .withTranslations('en', require('../../../assets/i18n/en.json'))
-          .withTranslations('pl', require('../../../assets/i18n/pl.json')),
-      ],
-      providers: [
-        { provide: SvgIconRegistryService, useValue: svgIconRegistryServiceSpy }
-      ]
+      imports: [JasmineUtil.moduleWithTranslations(HeaderImports.imports)],
+      providers: [JasmineUtil.svgIconSpyProvider()],
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
