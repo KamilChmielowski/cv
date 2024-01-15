@@ -2,7 +2,6 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
 export class JasmineUtil {
-
   static moduleWithTranslations(modules: any[]): any[] {
     return [
       ...modules,

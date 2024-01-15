@@ -24,7 +24,8 @@
   "article": {
     "work-experience": {
       "title": "Work experience",
-      "desc": "Implementation complex web applications for loyalty management."
+      "desc": "Implementation complex web applications for loyalty management.",
+      "present": "present"
     },
     "education": {
       "title": "Education",

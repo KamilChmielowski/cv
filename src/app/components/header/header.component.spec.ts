@@ -48,4 +48,11 @@ describe('HeaderComponent', () => {
 
     expect(header2El.nativeElement.textContent).toBeTruthy();
   });
+
+  it('should pass aria and text inputs to app-copy-text component', () => {
+    const items = fixture.debugElement.queryAll(By.css('app-copy-text'));
+
+    expect(items.every(item => !!item.componentInstance.aria)).withContext('missing aria input').toBeTrue();
+    expect(items.every(item => !!item.componentInstance.text)).withContext('missing text input').toBeTrue();
+  });
 });
