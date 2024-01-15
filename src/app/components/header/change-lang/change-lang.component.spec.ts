@@ -84,4 +84,10 @@ describe('ChangeLangComponent', () => {
     expect(buttonEl.every(el => !!el.nativeElement.textContent)
       || buttonEl.every(el => !!el.nativeElement.ariaLabel)).toBeTrue();
   });
+
+  it('should display min two language buttons', () => {
+    const buttonEl = fixture.debugElement.queryAll(By.css('button'));
+
+    expect(buttonEl.length).toBeGreaterThanOrEqual(2);
+  });
 });

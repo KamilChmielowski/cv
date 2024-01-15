@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SvgIconComponent } from 'angular-svg-icon';
-import { CommonModule } from '@angular/common';
+
+import { SectionTitleImports } from './section-title.imports';
 
 @Component({
   selector: 'app-section-title',
@@ -8,12 +8,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./section-title.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-    SvgIconComponent
-  ]
+  imports: [SectionTitleImports.imports],
 })
 export class SectionTitleComponent {
-  @Input() icon: string = '';
-  @Input() title: string = '';
+  @Input({ required: true }) icon: string = '';
+  @Input({ required: true }) title: string = '';
 }
