@@ -56,9 +56,7 @@ describe('ChangeThemeComponent', () => {
     expect(href.includes('dark.css') || href.includes('light.css')).toBeTrue();
   });
 
-  it('should set name or aria-label to button', () => {
-    const buttonEl = fixture.debugElement.query(By.css('button'));
-
-    expect(!!buttonEl.nativeElement.textContent || !!buttonEl.nativeElement.ariaLabel).toBeTrue();
+  it('should set name or aria-label to buttons', () => {
+    JasmineUtil.shouldSetTextOrAriaLabelToClickableElement(fixture);
   });
 });

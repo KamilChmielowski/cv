@@ -1,7 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { appIcons } from '../../app-icons-map';
 import { HeaderComponent } from './header.component';
 import { HeaderImports } from './header.imports';
 import { JasmineUtil } from '../../utils/jasmine.util';
@@ -30,11 +29,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should display existing icons', () => {
-    const contactIconsEl = fixture.debugElement.queryAll(By.css('svg-icon'));
-    const iconNames = appIcons.map(icons => icons[0]);
-    const everyIconsExist = contactIconsEl.every(icon => iconNames.includes(icon.componentInstance.name));
-
-    expect(everyIconsExist).toBeTrue();
+    JasmineUtil.shouldDisplayExistingIcons(fixture);
   });
 
   it('should display proper name', () => {

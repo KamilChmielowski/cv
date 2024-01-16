@@ -18,9 +18,8 @@ describe('WorkExperienceComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
+
 
   it('should display min one work reference', () => {
     expect(fixture.debugElement.queryAll(By.css('app-timeline-item')).length)

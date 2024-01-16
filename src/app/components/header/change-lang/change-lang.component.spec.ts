@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { appIcons } from '../../../app-icons-map';
 import { ChangeLangComponent } from './change-lang.component';
 import { ChangeLangImports } from './change-lang.imports';
 import { JasmineUtil } from '../../../utils/jasmine.util';
@@ -52,11 +51,7 @@ describe('ChangeLangComponent', () => {
   });
 
   it('should display existing icons', () => {
-    const iconsEl = fixture.debugElement.queryAll(By.css('svg-icon'));
-    const iconNames = appIcons.map(icons => icons[0]);
-    const everyIconsExist = iconsEl.every(icon => iconNames.includes(icon.componentInstance.name));
-
-    expect(everyIconsExist).toBeTrue();
+    JasmineUtil.shouldDisplayExistingIcons(fixture);
   });
 
   it('should display language icons', () => {
@@ -67,11 +62,8 @@ describe('ChangeLangComponent', () => {
     expect(containsLanguageIcons).toBeTrue();
   });
 
-  it('should set name or aria-label to button', () => {
-    const buttonEl = fixture.debugElement.queryAll(By.css('button'));
-
-    expect(buttonEl.every(el => !!el.nativeElement.textContent)
-      || buttonEl.every(el => !!el.nativeElement.ariaLabel)).toBeTrue();
+  it('should set name or aria-label to buttons', () => {
+    JasmineUtil.shouldSetTextOrAriaLabelToClickableElement(fixture);
   });
 
   it('should display min two language buttons', () => {

@@ -18,9 +18,7 @@ describe('EducationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', () => expect(component).toBeTruthy());
 
   it('should display min three education references', () => {
     expect(fixture.debugElement.queryAll(By.css('app-timeline-item')).length)

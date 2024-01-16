@@ -1,9 +1,12 @@
+import { By } from '@angular/platform-browser';
+import { ComponentFixture } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { appIcons } from '../app-icons-map';
+import { ValidatorUtil } from './validator.util';
 
 export class JasmineUtil {
   static moduleWithTranslations(modules: any[]): any[] {
@@ -19,6 +22,30 @@ export class JasmineUtil {
     return { provide: SvgIconRegistryService, useValue: jasmine.createSpyObj(['getSvgByName']) }
   }
 
+  static shouldDisplayExistingIcons(fixture: ComponentFixture<any>): void {
+    const svgIconsEl = fixture.debugElement.queryAll(By.css('svg-icon'));
+    const iconNames = appIcons.map(icons => icons[0]);
+    const everyIconsExist = svgIconsEl.every(icon => iconNames.includes(icon.componentInstance.name));
+    expect(everyIconsExist).toBeTrue();
+  }
+
+  static shouldSetTextOrAriaLabelToClickableElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
+    const clickableEl = [
+      ...fixture.debugElement.queryAll(By.css('button')),
+      ...fixture.debugElement.queryAll(By.css(selector)),
+    ];
+    expect(clickableEl.every(el => !!el.nativeElement.textContent || !!el.nativeElement.ariaLabel)).toBeTrue();
+  }
+
+  static shouldSetValidHref(fixture: ComponentFixture<any>, selector = '.clickable') {
+    const aEl = fixture.debugElement.queryAll(By.css(selector))
+    expect(aEl.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
+  }
+
+  static shouldPassRequiredInputs(elements: DebugElement[], inputNames: string[]): void {
+    expect(elements.every(el => inputNames.every(name => !!el.componentInstance[name]))).toBeTrue();
+  }
+
   static sectionTitleComponentUnitTests() {
     return {
       existingIcon: (element: DebugElement) => {
@@ -26,8 +53,7 @@ export class JasmineUtil {
         expect(iconNames.includes(element.componentInstance.icon)).toBeTrue();
       },
       requiredInputs: (element: DebugElement) => {
-        expect(element.componentInstance.icon).withContext('missing icon input').toBeTruthy();
-        expect(element.componentInstance.title).withContext('missing title input').toBeTruthy();
+        JasmineUtil.shouldPassRequiredInputs([element], ['title', 'icon']);
       }
     }
   }
@@ -35,9 +61,7 @@ export class JasmineUtil {
   static timelineItemComponentUnitTests() {
     return {
       requiredInputs: (elements: DebugElement[]) => {
-        expect(elements.every(item => !!item.componentInstance.date)).withContext('missing date input').toBeTrue();
-        expect(elements.every(item => !!item.componentInstance.chip)).withContext('missing chip input').toBeTrue();
-        expect(elements.every(item => !!item.componentInstance.header)).withContext('missing header input').toBeTrue();
+        JasmineUtil.shouldPassRequiredInputs(elements, ['date', 'chip', 'header']);
       }
     }
   }
