@@ -1,8 +1,9 @@
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
+import { JasmineUtil } from '../../utils/jasmine.util';
 import { TimelineItemComponent } from './timeline-item.component';
 
 @Component({
@@ -13,18 +14,22 @@ class TimelineItemTestComponent {}
 describe('TimelineItemComponent', () => {
   let component: TimelineItemComponent;
   let fixture: ComponentFixture<TimelineItemComponent>;
-  let testFixture: ComponentFixture<TimelineItemTestComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [CommonModule] }).overrideComponent(TimelineItemComponent, {
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [TimelineItemTestComponent],
+      imports: [
+        CommonModule,
+        TimelineItemComponent,
+      ]
+    }).overrideComponent(TimelineItemComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();
 
     fixture = TestBed.createComponent(TimelineItemComponent);
-    testFixture = TestBed.createComponent(TimelineItemTestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => expect(component).toBeTruthy());
 
@@ -71,7 +76,5 @@ describe('TimelineItemComponent', () => {
     expect(paragraphEl).withContext('to falsy value').toBeFalsy();
   });
 
-  it('should render ng-content', () => {
-    expect(testFixture.nativeElement.textContent).toContain('ng-content test')
-  });
+  it('should render ng-content', () => JasmineUtil.shouldRenderNgContent(TimelineItemTestComponent));
 });

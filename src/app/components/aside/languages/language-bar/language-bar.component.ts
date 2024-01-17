@@ -12,5 +12,5 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class LanguageBarComponent {
-  @Input() value = '0';
+  @Input({ required: true }) value = '0';
 }

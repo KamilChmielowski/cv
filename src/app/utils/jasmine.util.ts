@@ -1,5 +1,5 @@
 import { By } from '@angular/platform-browser';
-import { ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
@@ -44,6 +44,11 @@ export class JasmineUtil {
 
   static shouldPassRequiredInputs(elements: DebugElement[], inputNames: string[]): void {
     expect(elements.every(el => inputNames.every(name => !!el.componentInstance[name]))).toBeTrue();
+  }
+
+  static shouldRenderNgContent(component: any, text = 'ng-content test'): void {
+    const testFixture = TestBed.createComponent(component);
+    expect(testFixture.nativeElement.textContent).toContain(text);
   }
 
   static sectionTitleComponentUnitTests() {
