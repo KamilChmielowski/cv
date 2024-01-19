@@ -1,9 +1,9 @@
 <div class="references">
-  <a [href]="href" class="link">
+  <a [href]="href" class="link clickable">
     <span class="dot"></span>{{ title }}
   </a>
 
-  <a *ngIf="githubUrl" [href]="githubUrl">
+  <a *ngIf="githubUrl" [href]="githubUrl" class="clickable" [attr.aria-label]="'aside.projects.link-to-github' | translate">
     <svg-icon name="github"></svg-icon>
   </a>
 </div>

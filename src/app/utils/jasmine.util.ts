@@ -38,8 +38,8 @@ export class JasmineUtil {
   }
 
   static shouldSetValidHref(fixture: ComponentFixture<any>, selector = '.clickable') {
-    const aEl = fixture.debugElement.queryAll(By.css(selector))
-    expect(aEl.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
+    const elements = fixture.debugElement.queryAll(By.css(selector))
+    expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
   }
 
   static shouldPassRequiredInputs(elements: DebugElement[], inputNames: string[]): void {

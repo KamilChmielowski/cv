@@ -51,7 +51,8 @@
       "project-1": "Duża aplikacja udostępniająca narzędzia do studiowania grecki i hebrajskiego, konkordancje.",
       "project-2": "Śpiewnik w dwóch wersjach: <a href=\"https://bezpiecznaprzystan.net\" target=\"_blank\">Bezpieczna Przystań</a>, <a href=\"https://spiewnikpielgrzyma.pl\" target=\"_blank\">Śpiewnik Pielgrzyma</a>",
       "project-3": "Moje CV w dwóch wersjach językowych.",
-      "project-4": "Złożona aplikacja łącząca kilka publicznych API geolokacji."
+      "project-4": "Złożona aplikacja łącząca kilka publicznych API geolokacji.",
+      "link-to-github": "link do repozytorium projektu na github"
     },
     "languages": {
       "title": "Języki",
