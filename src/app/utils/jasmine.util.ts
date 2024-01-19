@@ -37,9 +37,20 @@ export class JasmineUtil {
     expect(clickableEl.every(el => !!el.nativeElement.textContent || !!el.nativeElement.ariaLabel)).toBeTrue();
   }
 
-  static shouldSetValidHref(fixture: ComponentFixture<any>, selector = '.clickable') {
+  static shouldRenderMinElements(fixture: ComponentFixture<any>, selector: string, min: number): void {
+    expect(fixture.debugElement.queryAll(By.css(selector)).length).toBeGreaterThanOrEqual(min);
+  }
+
+  static shouldSetValidHrefToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
     const elements = fixture.debugElement.queryAll(By.css(selector))
     expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
+  }
+
+  static shouldSetValidHrefToComponent(fixture: ComponentFixture<any>, selector = '.clickable', propertyName = 'href'): void {
+    const elements = fixture.debugElement.queryAll(By.css(selector))
+    expect(elements.every(el => {
+      return el.componentInstance[propertyName] ? ValidatorUtil.isValidHttpUrl(el.componentInstance[propertyName]) : true;
+    })).toBeTrue();
   }
 
   static shouldPassRequiredInputs(elements: DebugElement[], inputNames: string[]): void {

@@ -51,7 +51,7 @@ describe('AboutMeComponent', () => {
   });
 
   it('should set valid reference href urls', () => {
-    JasmineUtil.shouldSetValidHref(fixture, '.references');
+    JasmineUtil.shouldSetValidHrefToElement(fixture, '.references');
   });
 
   it('should call service to fetch current year', () => {
