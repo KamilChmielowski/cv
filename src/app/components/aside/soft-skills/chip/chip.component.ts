@@ -7,8 +7,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./chip.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-  ]
+  imports: [CommonModule],
 })
 export class ChipComponent {}
