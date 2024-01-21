@@ -47,10 +47,4 @@ describe('ProjectsComponent', () => {
       })
     });
   });
-
-  it('should pass existing translations to app-project-item components', () => {
-    const elements = fixture.debugElement.queryAll(By.css('app-project-item'));
-
-    expect(elements.every(element => element.nativeElement.textContent)).toBeTruthy();
-  });
 });

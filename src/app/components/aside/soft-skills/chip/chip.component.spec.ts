@@ -9,7 +9,7 @@ import { JasmineUtil } from '../../../../utils/jasmine.util';
 })
 class ChipTestComponent {}
 
-fdescribe('ChipComponent', () => {
+describe('ChipComponent', () => {
   let component: ChipComponent;
   let fixture: ComponentFixture<ChipComponent>;
 
