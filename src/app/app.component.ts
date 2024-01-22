@@ -4,6 +4,7 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateService } from '@ngx-translate/core';
 
 import { appIconsMap } from './app-icons-map';
+import { Languages } from './components/header/change-lang/change-lang.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ import { appIconsMap } from './app-icons-map';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
+  readonly defaultLang = Languages.en;
+
   constructor(
     private registry: SvgIconRegistryService,
     private translate: TranslateService,
@@ -29,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   private initTranslationsLang(): void {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.translate.setDefaultLang(this.defaultLang);
+    this.translate.use(this.defaultLang);
   }
 }

@@ -41,6 +41,12 @@ export class JasmineUtil {
     expect(fixture.debugElement.queryAll(By.css(selector)).length).toBeGreaterThanOrEqual(min);
   }
 
+  static shouldRenderComponents(components: { [key: string]: DebugElement[] }): void {
+    Object.entries(components).forEach(([key, component]) => {
+      expect(component.length === 1).withContext(`missing ${key} component`).toBeTrue();
+    });
+  }
+
   static shouldSetValidHrefToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
     const elements = fixture.debugElement.queryAll(By.css(selector))
     expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();

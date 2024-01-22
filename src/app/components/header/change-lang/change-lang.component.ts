@@ -4,6 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { ChangeLangImports } from './change-lang.imports';
 
+export enum Languages {
+  pl = 'pl', en = 'en'
+}
+
 @Component({
   selector: 'app-change-lang',
   templateUrl: './change-lang.component.html',
@@ -13,9 +17,11 @@ import { ChangeLangImports } from './change-lang.imports';
   imports: [ChangeLangImports.imports],
 })
 export class ChangeLangComponent {
+  protected readonly languages = Languages;
+
   constructor(private translate: TranslateService) {}
 
-  changeLang(lang: string, elementToFocus: HTMLButtonElement): void {
+  protected changeLang(lang: string, elementToFocus: HTMLButtonElement): void {
     this.translate.use(lang);
     elementToFocus.focus();
   }
