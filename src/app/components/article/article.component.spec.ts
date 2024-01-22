@@ -36,8 +36,8 @@ describe('ArticleComponent', () => {
 
   it('should wrap html content in article markup', () => {
     expect(fixture.debugElement.queryAll(By.css('article')).length)
-      .withContext('renders more article markups').toEqual(1);
-    expect((fixture.nativeElement.innerHTML + '').startsWith('<article'))
-      .withContext('does not start with article markup').toBeTrue();
+      .withContext('renders improper number of article markups').toEqual(1);
+    expect((fixture.nativeElement.firstElementChild.localName))
+      .withContext('does not start with article markup').toEqual('article');
   });
 });

@@ -66,8 +66,8 @@ export class JasmineUtil {
     const elements = fixture.debugElement.queryAll(By.css(selector));
 
     expect(elements.length).withContext('too many elements').toBe(1);
-    expect(fixture.debugElement.nativeElement.innerHTML.startsWith(`<${selector}`))
-      .withContext('component doesn\'t start with html mark').toBeTrue();
+    expect(fixture.debugElement.nativeElement.firstElementChild.localName)
+      .withContext('component doesn\'t start with html mark').toEqual(selector);
     expect(fixture.debugElement.children.length)
       .withContext('doesn\'t wrap a html content').toBe(1);
   }

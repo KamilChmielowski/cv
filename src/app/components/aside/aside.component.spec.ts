@@ -49,8 +49,8 @@ describe('AsideComponent', () => {
 
   it('should render section title before child components', () => {
     Object.entries(getChildComponents()).forEach(([key, component]) => {
-      expect(component.at(0)?.nativeElement.previousSibling.localName === 'app-section-title')
-        .withContext(`missing section-title before ${key} component`).toBeTrue();
+      expect(component.at(0)?.nativeElement.previousSibling.localName)
+        .withContext(`missing section-title before ${key} component`).toEqual('app-section-title');
     });
   });
 });
