@@ -62,6 +62,16 @@ export class JasmineUtil {
     expect(testFixture.nativeElement.textContent).toContain(text);
   }
 
+  static shouldRenderOneWrapperElement(fixture: ComponentFixture<any>, selector: string): void {
+    const elements = fixture.debugElement.queryAll(By.css(selector));
+
+    expect(elements.length).withContext('too many elements').toBe(1);
+    expect(fixture.debugElement.nativeElement.innerHTML.startsWith(`<${selector}`))
+      .withContext('component doesn\'t start with html mark').toBeTrue();
+    expect(fixture.debugElement.children.length)
+      .withContext('doesn\'t wrap a html content').toBe(1);
+  }
+
   static sectionTitleComponentUnitTests() {
     return {
       existingIcon: (element: DebugElement) => {

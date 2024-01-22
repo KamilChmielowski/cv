@@ -50,4 +50,8 @@ describe('HeaderComponent', () => {
     expect(items.every(item => !!item.componentInstance.aria)).withContext('missing aria input').toBeTrue();
     expect(items.every(item => !!item.componentInstance.text)).withContext('missing text input').toBeTrue();
   });
+
+  it('should render one header wrapper element', () => {
+    JasmineUtil.shouldRenderOneWrapperElement(fixture, 'header')
+  });
 });
