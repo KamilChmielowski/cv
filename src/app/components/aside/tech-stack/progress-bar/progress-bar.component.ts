@@ -7,9 +7,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./progress-bar.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-  ]
+  imports: [CommonModule],
 })
 export class ProgressBarComponent {
   @Input() percent = '0';
