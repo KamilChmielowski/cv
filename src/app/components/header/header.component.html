@@ -10,7 +10,7 @@
   <h2 class="position">{{ 'header.position' | translate }}</h2>
 
   <h3 class="location">
-    <svg-icon name="location"></svg-icon>PL, Gliwice
+    <svg-icon name="location"></svg-icon>{{ environment.contact.location }}
   </h3>
 
   <ul class="contact">
@@ -18,23 +18,22 @@
       <svg-icon name="phone"></svg-icon>
 
       <app-copy-text [aria]="'header.aria.tel' | translate"
-                     copyText="48 459 413 344"
-                     text="+48 459 413 344"
+                     [copyText]="environment.contact.tel"
+                     [text]="'+' + environment.contact.tel"
       ></app-copy-text>
     </li>
 
     <li>
       <svg-icon name="email"></svg-icon>
 
-      <app-copy-text [aria]="'header.aria.email' | translate" text="kamilchmielowski94@gmail.com"></app-copy-text>
+      <app-copy-text [aria]="'header.aria.email' | translate" [text]="environment.contact.email"></app-copy-text>
     </li>
 
     <li>
       <svg-icon name="website"></svg-icon>
 
       <app-copy-text [aria]="'header.aria.website' | translate"
-                     copyText="https://kamilchmielowski.website.com"
-                     text="https://kamilchmielowski-dev.web.app"
+                     [text]="location.origin"
       ></app-copy-text>
     </li>
   </ul>
