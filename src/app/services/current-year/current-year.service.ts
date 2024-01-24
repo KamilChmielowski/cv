@@ -15,7 +15,9 @@ export class CurrentYearService {
       headers: environment.worldClockAPI.headers
     }).pipe(
       catchError(() => of({ currentDateTime: new Date() })),
-      map(response => new Date(response.currentDateTime).getFullYear()),
+      map(response => {
+        return (response?.currentDateTime ? new Date(response.currentDateTime) : new Date()).getFullYear();
+      }),
     );
   }
 }

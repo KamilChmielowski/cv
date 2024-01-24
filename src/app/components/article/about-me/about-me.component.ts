@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -24,12 +25,20 @@ export class AboutMeComponent implements OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private currentYearService: CurrentYearService,
+    private destroyRef: DestroyRef,
   ) {}
 
   protected currentYear = new Date().getFullYear();
 
+  private getCurrentYear$ = this.currentYearService.getCurrentYear()
+    .pipe(takeUntilDestroyed(this.destroyRef));
+
   ngOnInit() {
-    this.currentYearService.getCurrentYear().subscribe(currentYear => {
+    this.fetchCurrentYear();
+  }
+
+  private fetchCurrentYear(): void {
+    this.getCurrentYear$.subscribe(currentYear => {
       this.currentYear = currentYear;
       this.cdr.markForCheck();
     });
