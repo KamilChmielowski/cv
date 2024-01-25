@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TranslateService } from '@ngx-translate/core';
 
+import { AsideProjectsComponent } from './aside-projects.component';
 import { JasmineUtil } from '../../../../utils/jasmine.util';
-import { ProjectsComponent } from './projects.component';
 
-describe('ProjectsComponent', () => {
-  let component: ProjectsComponent;
-  let fixture: ComponentFixture<ProjectsComponent>;
+describe('AsideProjectsComponent', () => {
+  let component: AsideProjectsComponent;
+  let fixture: ComponentFixture<AsideProjectsComponent>;
   let translateService: TranslateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [JasmineUtil.moduleWithTranslations([ProjectsComponent])],
+      imports: [JasmineUtil.moduleWithTranslations([AsideProjectsComponent])],
       providers: [JasmineUtil.svgIconSpyProvider()],
     });
-    fixture = TestBed.createComponent(ProjectsComponent);
+    fixture = TestBed.createComponent(AsideProjectsComponent);
     translateService = TestBed.inject(TranslateService);
     component = fixture.componentInstance;
     fixture.detectChanges();

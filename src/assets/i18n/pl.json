@@ -1,6 +1,6 @@
 {
   "header": {
-    "position": "Programista web / full stack",
+    "position": "Programista Web / Angular",
     "about-me": {
       "title": "O mnie",
       "desc": "<p>Jestem programistą webowym z ponad {{ years }} letnim doświadczeniem komercyjnym zdobytym w globalnym, polskim 'software house'.</p><p>Moją najmocniejszą stroną jest framework Angular, ale posiadam również doświaczenie z technologiami Node i MongoDB (rozbudowana platforma internetowa na produkcji) oraz stworzyłem przykładowe aplikacje webowe (sprawdź mój GitHub) zaimplementowane w React, Vue, REST API z użyciem Express. Interesują mnie zarówno techologie frontend jak i backend.</p><p>Prywatnie spędzam czas przy literaturze faktu oraz popularnonaukowej, starożytnej grece i egzegezie biblijnej.</p><p>Jestem również autorem rozbudowanej platformy internetowej <a href=\"https://apologetykabiblijna.pl\" target=\"_blank\">apologetykabiblijna.pl</a>, samodzielnie zbudowanej i wdrożonej od podstaw (Angular 2+, REST API, Node.js + Express, MongoDB, Firebase, Heroku).</p>",

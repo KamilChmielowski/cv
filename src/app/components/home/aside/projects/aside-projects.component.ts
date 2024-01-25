@@ -7,8 +7,8 @@ import { ProjectItemComponent } from './project-item/project-item.component';
 
 @Component({
   selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+  templateUrl: './aside-projects.component.html',
+  styleUrls: ['./aside-projects.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
@@ -17,4 +17,4 @@ import { ProjectItemComponent } from './project-item/project-item.component';
     TranslateModule,
   ]
 })
-export class ProjectsComponent {}
+export class AsideProjectsComponent {}
