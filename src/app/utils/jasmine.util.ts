@@ -6,6 +6,7 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { appIcons } from '../app-icons-map';
+import { routes } from '../app-routing.module';
 import { ValidatorUtil } from './validator.util';
 
 export class JasmineUtil {
@@ -50,6 +51,14 @@ export class JasmineUtil {
   static shouldSetValidHrefToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
     const elements = fixture.debugElement.queryAll(By.css(selector))
     expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
+  }
+
+  static shouldSetValidRouterLinkToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
+    const elements = fixture.debugElement.queryAll(By.css(selector))
+
+    expect(elements.every(el => routes
+      .some(route => route.path === el.attributes['routerLink'] || el.attributes['routerLink'] === '/')
+    )).toBeTrue();
   }
 
   static shouldSetValidHrefToComponent(fixture: ComponentFixture<any>, selector = '.clickable', propertyName = 'href'): void {

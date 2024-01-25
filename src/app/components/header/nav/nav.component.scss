@@ -1,0 +1,21 @@
+@import 'media';
+@import 'variables';
+
+:host {
+  display: block;
+  background-color: $color-background;
+  padding: 0.5rem;
+
+  a {
+    display: block;
+    padding: 0.5rem;
+
+    &.active {
+      background-color: $color-background-dark;
+    }
+
+    &:first-of-type {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

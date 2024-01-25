@@ -18,7 +18,9 @@
       "theme": "zmień kolorystykę strony",
       "tel": "skopiuj numer telefonu",
       "email": "skopiuj adres email",
-      "website": "Skopiuj adres strony autora"
+      "website": "skopiuj adres strony autora",
+      "about": "zobacz sekcję o mnie",
+      "projects": "zobacz moje projekty"
     }
   },
   "article": {

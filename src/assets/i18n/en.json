@@ -18,7 +18,9 @@
       "theme": "change website's theme",
       "tel": "copy telephone number",
       "email": "copy email address",
-      "website": "copy author's website"
+      "website": "copy author's website",
+      "about": "check about me section",
+      "projects": "check out my projects"
     }
   },
   "article": {

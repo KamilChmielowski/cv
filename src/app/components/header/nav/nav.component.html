@@ -1,0 +1,11 @@
+<nav>
+  <a #about (click)="projects.focus()" [attr.aria-label]="'header.aria.about' | translate"
+     routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="clickable">
+    <svg-icon name="about"></svg-icon>
+  </a>
+
+  <a #projects (click)="about.focus()" [attr.aria-label]="'header.aria.projects' | translate" routerLink="projects"
+     routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="clickable">
+    <svg-icon name="projects"></svg-icon>
+  </a>
+</nav>

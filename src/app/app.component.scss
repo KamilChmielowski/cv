@@ -13,6 +13,7 @@
   .root-wrapper {
     background-color: $color-background;
     margin: 0 2rem;
+    position: relative;
 
     @include landscape {
       margin: 0 1rem;
@@ -21,47 +22,26 @@
     @include portrait {
       margin: 0 0.5rem;
     }
-  }
 
-  main {
-    display: flex;
-    padding: 0 2rem 4rem;
-    margin: 1rem 0;
-
-    @include portrait-tablet() {
-      flex-flow: column;
-    }
-
-    @include portrait() {
-      padding: 0 0.8rem 4rem;
-    }
-
-    app-article {
-      border-right: 1px solid $color-border;
-      padding-right: 1.5rem;
-      width: 65%;
+    main {
+      display: flex;
+      padding: 0 2rem 4rem;
+      margin: 1rem 0;
 
       @include portrait-tablet() {
-        width: 100%;
-        border-right: none;
+        flex-flow: column;
+      }
+
+      @include portrait() {
+        padding: 0 0.8rem 4rem;
       }
     }
 
-    app-aside {
-      margin-left: 1.5rem;
-      width: 35%;
-
-      @include portrait-tablet() {
-        margin-left: 0;
-        width: 100%;
-      }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: $color-background-dark;
+      font-size: 0.875rem;
     }
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: $color-background-dark;
-    font-size: 0.875rem;
   }
 }

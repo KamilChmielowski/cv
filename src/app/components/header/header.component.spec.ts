@@ -1,5 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { HeaderComponent } from './header.component';
 import { HeaderImports } from './header.imports';
@@ -11,7 +12,10 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [JasmineUtil.moduleWithTranslations(HeaderImports.imports)],
+      imports: [JasmineUtil.moduleWithTranslations([
+        ...HeaderImports.imports,
+        RouterTestingModule,
+      ])],
       providers: [JasmineUtil.svgIconSpyProvider()],
     });
     fixture = TestBed.createComponent(HeaderComponent);

@@ -7,10 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './components/article/article.component';
-import { AsideComponent } from './components/aside/aside.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
-import { SectionTitleComponent } from './components/section-title/section-title.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -19,13 +17,11 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    AngularSvgIconModule.forRoot(),
-    ArticleComponent,
-    AsideComponent,
     BrowserModule,
+    AngularSvgIconModule.forRoot(),
+    AppRoutingModule,
     HeaderComponent,
     HttpClientModule,
-    SectionTitleComponent,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

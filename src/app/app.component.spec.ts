@@ -37,9 +37,8 @@ describe('AppComponent', () => {
 
   const getChildComponents = () => ({
     header: fixture.debugElement.queryAll(By.css('app-header')),
-    article: fixture.debugElement.queryAll(By.css('app-article')),
-    aside: fixture.debugElement.queryAll(By.css('app-aside')),
     main: fixture.debugElement.queryAll(By.css('main')),
+    outlet: fixture.debugElement.queryAll(By.css('router-outlet')),
     footer: fixture.debugElement.queryAll(By.css('footer')),
   });
 

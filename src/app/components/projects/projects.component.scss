@@ -1,0 +1,18 @@
+@import 'media';
+@import 'variables';
+
+:host {
+  main {
+    display: flex;
+    padding: 0 2rem 4rem;
+    margin: 1rem 0;
+
+    @include portrait-tablet() {
+      flex-flow: column;
+    }
+
+    @include portrait() {
+      padding: 0 0.8rem 4rem;
+    }
+  }
+}
