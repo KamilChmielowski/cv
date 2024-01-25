@@ -23,8 +23,19 @@
 
     app-nav {
       position: absolute;
-      top: 0;
-      right: -4.5rem;
+
+      top: -4.5rem;
+      right: 0;
+
+      @include desktop() {
+        top: 0;
+        right: -4.5rem;
+      }
+
+      @include portrait() {
+        top: -9.5rem;
+        right: 0;
+      }
     }
 
     .name {
@@ -103,8 +114,9 @@
 
       @include portrait() {
         justify-content: flex-start;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding: 1rem 0.5rem;
       }
 
       li {

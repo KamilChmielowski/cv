@@ -12,8 +12,12 @@
 
   .root-wrapper {
     background-color: $color-background;
-    margin: 0 2rem;
+    margin: 0 5rem;
     position: relative;
+
+    @include tablet {
+      margin: 0 2rem;
+    }
 
     @include landscape {
       margin: 0 1rem;

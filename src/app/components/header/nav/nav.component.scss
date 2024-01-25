@@ -2,10 +2,17 @@
 @import 'variables';
 
 :host {
-  display: block;
   background-color: $color-background;
   padding: 0.5rem;
+  display: block;
 
+  nav {
+    display: flex;
+
+    @include desktop() {
+      display: block;
+    }
+  }
   a {
     display: block;
     padding: 0.5rem;
@@ -15,7 +22,13 @@
     }
 
     &:first-of-type {
-      margin-bottom: 0.5rem;
+      @include desktop() {
+        margin-bottom: 0.5rem;
+      }
+
+      @include portrait-tablet() {
+        margin-right: 0.5rem;
+      }
     }
   }
 }

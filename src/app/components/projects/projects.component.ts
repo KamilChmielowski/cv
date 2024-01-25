@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SectionTitleComponent } from '../home/section-title/section-title.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
@@ -7,6 +9,10 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./projects.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink,],
+  imports: [
+    RouterLink,
+    SectionTitleComponent,
+    TranslateModule,
+  ],
 })
 export class ProjectsComponent {}
