@@ -2,17 +2,11 @@
 @import 'variables';
 
 :host {
-  main {
-    display: flex;
-    padding: 0 2rem 4rem;
-    margin: 1rem 0;
+  width: 100%;
 
-    @include portrait-tablet() {
-      flex-flow: column;
-    }
-
-    @include portrait() {
-      padding: 0 0.8rem 4rem;
-    }
+  .divider {
+    border-top: 1px solid $color-border;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 }

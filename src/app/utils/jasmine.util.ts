@@ -39,7 +39,7 @@ export class JasmineUtil {
   }
 
   static shouldRenderMinElements(fixture: ComponentFixture<any>, selector: string, min: number): void {
-    expect(fixture.debugElement.queryAll(By.css(selector)).length).toBeGreaterThanOrEqual(min);
+    expect(fixture.debugElement.queryAll(By.css(selector)).length).withContext(`Missing ${selector} selector`).toBeGreaterThanOrEqual(min);
   }
 
   static shouldRenderComponents(components: { [key: string]: DebugElement[] }): void {
