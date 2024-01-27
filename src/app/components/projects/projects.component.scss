@@ -4,9 +4,17 @@
 :host {
   width: 100%;
 
-  .divider {
-    border-top: 1px solid $color-border;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+  article {
+    section {
+      @include desktop() {
+        width: 70%;
+      }
+    }
+
+    .divider {
+      border-top: 1px solid $color-border;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
   }
 }

@@ -45,7 +45,7 @@ describe('CurrentYearService', () => {
   it('getCurrentYear should retrieve fallback data if API response will change', () => {
     const req = fetchData();
 
-    req.flush({ currentDateTime2: new Date() });
+    req.flush({ renamedProperty: new Date() });
   });
 
   afterEach(() => {

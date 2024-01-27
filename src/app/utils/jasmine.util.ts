@@ -1,6 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DebugElement } from '@angular/core';
+import { ChangeDetectorRef, DebugElement } from '@angular/core';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateTestingModule } from 'ngx-translate-testing';
@@ -21,6 +21,11 @@ export class JasmineUtil {
 
   static svgIconSpyProvider(): any {
     return { provide: SvgIconRegistryService, useValue: jasmine.createSpyObj(['getSvgByName']) }
+  }
+
+  static markForCheckSpy(fixture: ComponentFixture<any>): jasmine.Spy<any> {
+    const changeDetectorRef = fixture.debugElement.injector.get(ChangeDetectorRef);
+    return spyOn(changeDetectorRef.constructor.prototype, 'markForCheck');
   }
 
   static shouldDisplayExistingIcons(fixture: ComponentFixture<any>): void {

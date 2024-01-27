@@ -6,6 +6,12 @@ export const environment: EnvironmentModel = {
     location: 'PL, Gliwice',
     tel: '48 459 413 344',
   },
+  github: {
+    apiUrl: 'https://api.github.com/repos/KamilChmielowski/',
+    languagesEndpoint: '{project}/languages',
+    commitsEndpoint: '{project}/commits',
+    repoUrl: 'https://github.com/KamilChmielowski/',
+  },
   worldClockAPI: {
     headers: {
       'X-RapidAPI-Key': '5342b1c5bbmshed6f38ea124fc16p1bb353jsnfa4eb77a9c57',

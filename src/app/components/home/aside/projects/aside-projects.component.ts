@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { environment } from '../../../../../environments/environment';
 import { ProjectItemComponent } from './project-item/project-item.component';
 
 @Component({
@@ -17,4 +18,6 @@ import { ProjectItemComponent } from './project-item/project-item.component';
     TranslateModule,
   ]
 })
-export class AsideProjectsComponent {}
+export class AsideProjectsComponent {
+  protected readonly environment = environment;
+}

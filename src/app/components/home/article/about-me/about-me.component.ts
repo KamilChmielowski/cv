@@ -6,6 +6,7 @@ import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CurrentYearService } from '../../../../services/current-year/current-year.service';
+import { environment } from '../../../../../environments/environment';
 import { SectionTitleComponent } from '../../section-title/section-title.component';
 
 @Component({
@@ -22,16 +23,17 @@ import { SectionTitleComponent } from '../../section-title/section-title.compone
   ]
 })
 export class AboutMeComponent implements OnInit {
+  protected readonly environment = environment;
+  protected currentYear = new Date().getFullYear();
+
+  private getCurrentYear$ = this.currentYearService.getCurrentYear()
+    .pipe(takeUntilDestroyed(this.destroyRef));
+
   constructor(
     private cdr: ChangeDetectorRef,
     private currentYearService: CurrentYearService,
     private destroyRef: DestroyRef,
   ) {}
-
-  protected currentYear = new Date().getFullYear();
-
-  private getCurrentYear$ = this.currentYearService.getCurrentYear()
-    .pipe(takeUntilDestroyed(this.destroyRef));
 
   ngOnInit() {
     this.fetchCurrentYear();

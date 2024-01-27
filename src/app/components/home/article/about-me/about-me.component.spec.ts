@@ -59,11 +59,8 @@ describe('AboutMeComponent', () => {
   });
 
   it('should refresh view after data receive', () => {
-    const changeDetectorRef = fixture.debugElement.injector.get(ChangeDetectorRef);
-    const markForCheckSpy = spyOn(changeDetectorRef.constructor.prototype, 'markForCheck');
-
+    const markForCheckSpy = JasmineUtil.markForCheckSpy(fixture);
     component.ngOnInit();
-
     expect(markForCheckSpy).toHaveBeenCalledTimes(1);
   });
 });

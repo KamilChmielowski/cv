@@ -1,40 +1,61 @@
-<app-section-title title="Apologetyka Biblijna" icon="projects" class="title"></app-section-title>
+<article>
+  <section>
+    <app-section-title title="Apologetyka Biblijna" icon="projects" class="title"></app-section-title>
 
-<app-project-item
-  title="apologetykabiblijna.pl"
-  href="https://apologetykabiblijna.pl"
-  [chips]="['angular', 'material', 'mongo', 'express']">
-  <span [innerHTML]="'aside.projects.project-1' | translate"></span>
-</app-project-item>
+    <app-project-item
+      class="extra-space"
+      title="apologetykabiblijna.pl"
+      href="https://apologetykabiblijna.pl"
+      [chips]="['angular', 'material', 'mongo', 'express']">
+      <span [innerHTML]="'aside.projects.project-1' | translate"></span>
+    </app-project-item>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<app-section-title title="Bezpieczna Przystań" icon="projects" class="title"></app-section-title>
+  <section>
+    <app-section-title title="Bezpieczna Przystań" icon="projects" class="title"></app-section-title>
 
-<app-project-item title="bezpiecznaprzystan.net"
-                  href="https://bezpiecznaprzystan.net"
-                  [chips]="['angular']">
-  <span [innerHTML]="'aside.projects.project-2' | translate"></span>
-</app-project-item>
+    <app-project-item
+      class="extra-space"
+      title="bezpiecznaprzystan.net"
+      href="https://bezpiecznaprzystan.net"
+      [chips]="['angular']">
+      <span [innerHTML]="'aside.projects.project-2' | translate"></span>
+    </app-project-item>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<app-section-title title="Curriculum vitae" icon="projects" class="title"></app-section-title>
+  <section>
+    <app-section-title title="Curriculum vitae" icon="projects" class="title"></app-section-title>
 
-<app-project-item title="kamilchmielowski-dev.web.app"
-                  href="https://kamilchmielowski-dev.web.app/"
-                  githubUrl="https://github.com/KamilChmielowski/cv"
-                  [chips]="['angular', 'jasmine', 'cypress']">
-  <span [innerHTML]="'aside.projects.project-3' | translate"></span>
-</app-project-item>
+    <app-project-item
+      class="extra-space"
+      title="kamilchmielowski-dev.web.app"
+      href="https://kamilchmielowski-dev.web.app/"
+      [githubUrl]="environment.github.repoUrl + 'cv'"
+      [chips]="['angular', 'jasmine', 'cypress']">
+      <span [innerHTML]="'aside.projects.project-3' | translate"></span>
+    </app-project-item>
 
-<div class="divider"></div>
+    <app-project-lang *ngIf="projectsLanguages?.at(0) as value" [languages]="value"></app-project-lang>
+  </section>
 
-<app-section-title title="Weather app" icon="projects" class="title"></app-section-title>
+  <div class="divider"></div>
 
-<app-project-item title="kamilchmielowski-weather.web.app"
-                  href="https://kamilchmielowski-weather.web.app/"
-                  githubUrl="https://github.com/KamilChmielowski/weather"
-                  [chips]="['angular']">
-  <span [innerHTML]="'aside.projects.project-4' | translate"></span>
-</app-project-item>
+  <section>
+    <app-section-title title="Weather app" icon="projects" class="title"></app-section-title>
+
+    <app-project-item
+      class="extra-space"
+      title="kamilchmielowski-weather.web.app"
+      href="https://kamilchmielowski-weather.web.app/"
+      [githubUrl]="environment.github.repoUrl + 'weather'"
+      [chips]="['angular']">
+      <span [innerHTML]="'aside.projects.project-4' | translate"></span>
+    </app-project-item>
+
+    <app-project-lang *ngIf="projectsLanguages?.at(1) as value" [languages]="value"></app-project-lang>
+  </section>
+</article>

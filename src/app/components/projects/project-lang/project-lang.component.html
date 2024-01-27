@@ -1,0 +1,14 @@
+<div class="bar">
+  <span *ngFor="let lang of (languages | keyvalue)?.sort(compare)"
+        [style.width.%]="+lang.value / langSum * 100"
+        [class]="lang.key.toLowerCase()" class="lang">
+  </span>
+</div>
+
+<ul>
+  <li *ngFor="let lang of (languages | keyvalue)?.sort(compare)">
+    <span class="dot" [class]="lang.key.toLowerCase()"></span>
+    {{ lang.key }}
+    <span class="percent">{{ (+lang.value / langSum * 100).toFixed(2) }}%</span>
+  </li>
+</ul>

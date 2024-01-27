@@ -1,0 +1,64 @@
+@import 'variables';
+
+:host {
+  display: block;
+
+  .bar {
+    $height: 0.6rem;
+    display: flex;
+    width: 100%;
+    height: $height;
+    border-radius: $height;
+    background: $color-background-dark;
+
+    span {
+      box-sizing: content-box;
+      border: 1px solid $color-background-dark;
+
+      &:first-of-type {
+        border-top-left-radius: $height;
+        border-bottom-left-radius: $height;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: $height;
+        border-bottom-right-radius: $height;
+      }
+
+      &.typescript { background-color: #3178c6 }
+      &.scss { background-color: #c6538c }
+      &.html { background-color: #e34c26 }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      font-size: 0.9rem;
+      margin-right: 1rem;
+      color: $color-chip;
+
+      .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: 0.5rem;
+        border-radius: 0.5rem;
+
+        &.typescript { background-color: #3178c6 }
+        &.scss { background-color: #c6538c }
+        &.html { background-color: #e34c26 }
+      }
+
+      .percent {
+        margin-left: 0.5rem;
+        color: $color-text;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

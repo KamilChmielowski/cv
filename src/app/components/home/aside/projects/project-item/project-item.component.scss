@@ -43,3 +43,9 @@
     text-align: inherit;
   }
 }
+
+:host-context(.extra-space) {
+  .desc {
+    margin: 2rem 0;
+  }
+}

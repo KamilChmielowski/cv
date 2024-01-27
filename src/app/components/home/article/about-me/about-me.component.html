@@ -1,6 +1,6 @@
 <app-section-title [title]="'header.about-me.title' | translate" icon="about"></app-section-title>
 
-<a href="https://github.com/KamilChmielowski" class="references ref-1"
+<a [href]="environment.github.repoUrl" class="references ref-1"
    [attr.aria-label]="'header.about-me.aria.github' | translate">
   <svg-icon name="github"></svg-icon>
 </a>
