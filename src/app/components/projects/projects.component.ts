@@ -7,6 +7,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { environment } from '../../../environments/environment';
+import { FeaturesComponent } from './features/features.component';
+import { GalleryComponent } from './gallery/gallery.component';
 import { GithubLanguages } from '../../services/github/github.model';
 import { GithubService } from '../../services/github/github.service';
 import { ProjectItemComponent } from '../home/aside/projects/project-item/project-item.component';
@@ -21,6 +23,8 @@ import { SectionTitleComponent } from '../home/section-title/section-title.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
+    FeaturesComponent,
+    GalleryComponent,
     ProjectItemComponent,
     ProjectLangComponent,
     RouterLink,

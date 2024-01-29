@@ -1,0 +1,32 @@
+@import 'media';
+
+:host {
+  ul {
+    padding-left: 2rem;
+
+    @include tablet() {
+      padding-left: 1.5rem;
+    }
+
+    @include landscape() {
+      padding-left: 1rem;
+    }
+
+    @include portrait() {
+      padding-left: 0.5rem;
+    }
+
+    li {
+      font-size: 0.875rem;
+      margin: 0.4rem 0;
+      list-style-type:none;
+
+      &:before{
+        content:'\00b7';
+        font-size: 4rem;
+        line-height: 0.875rem;
+        vertical-align:middle;
+      }
+    }
+  }
+}

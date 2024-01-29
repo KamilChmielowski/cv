@@ -62,6 +62,52 @@
       "en": "English"
     }
   },
+  "projects": {
+    "bible": {
+      "0": "Angular 11 migrated to Angular 15",
+      "1": "Complex, nested routing",
+      "2": "Lazy loading modules",
+      "3": "Fully based on onPush change detection",
+      "4": "Lazy loading images with Intersection observer",
+      "5": "Responsive web design supported with Breakpoints observer",
+      "6": "Angular Material",
+      "7": "Own and external APIs",
+      "8": "Newsletter system",
+      "9": "Contact form system",
+      "10": "Interactive diagrams (Chart.js)"
+    },
+    "songbook": {
+      "0": "Angular 13",
+      "1": "Built using Server Site Rendering",
+      "2": "Fully based on onPush change detection",
+      "3": "HTML5 audio integrated with Google's drive",
+      "4": "Responsive web design"
+    },
+    "cv": {
+      "0": "Angular 16",
+      "1": "Fully standalone app",
+      "2": "Fully based on onPush change detection",
+      "3": "Unit tests with Jasmine (test coverage: )",
+      "4": "End to End tests with Cypress (test coverage: )",
+      "5": "Translations (ngx-translate)",
+      "6": "Images gallery (ng-gallery)",
+      "7": "Responsive web design"
+    },
+    "weather": {
+      "0": "Angular 16",
+      "1": "Fully standalone app",
+      "2": "Fully based on onPush change detection",
+      "3": "Simple routing with few routes and guards",
+      "4": "Unit tests with Jasmine (test coverage: )",
+      "5": "End to End tests with Cypress (test coverage: )",
+      "6": "Skeleton loaders",
+      "7": "Maps integration (maplibre-gl)",
+      "8": "Forecast / history weather (weatherapi-com.p.rapidapi.com)",
+      "9": "Autocomplete locations (api.geoapify.com)",
+      "10": "Finding location by user IP address (geolocation-db.com)",
+      "11": "Responsive web design"
+    }
+  },
   "footer": {
     "copyright": "Template Copyright"
   }

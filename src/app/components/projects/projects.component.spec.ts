@@ -1,4 +1,5 @@
 import { By } from '@angular/platform-browser';
+import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -29,7 +30,9 @@ describe('ProjectsComponent', () => {
         JasmineUtil.svgIconSpyProvider(),
         { provide: GithubService, useValue: githubServiceSpy },
       ],
-    });
+    }).overrideComponent(ProjectsComponent, {
+      set: { changeDetection: ChangeDetectionStrategy.Default }
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectsComponent);
     translateService = TestBed.inject(TranslateService);
@@ -75,5 +78,17 @@ describe('ProjectsComponent', () => {
     const markForCheckSpy = JasmineUtil.markForCheckSpy(fixture);
     component.ngOnInit();
     expect(markForCheckSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should passed translated content to features components', () => {
+    const elements = fixture.debugElement.queryAll(By.css('app-features'));
+
+    elements.forEach((element, i) => {
+      Array.from({ length: element.componentInstance.count }, (_, index) => index).forEach(v => {
+        translateService.get(`projects.${element.componentInstance.key}.${v}`).subscribe(value => {
+          expect(element.nativeElement.textContent).not.toContain(`projects.${element.componentInstance.key}.${v}`);
+        });
+      })
+    });
   });
 });

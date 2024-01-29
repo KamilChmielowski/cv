@@ -11,6 +11,8 @@
     </app-project-item>
   </section>
 
+  <app-features key="bible" [count]="11"></app-features>
+
   <div class="divider"></div>
 
   <section>
@@ -24,6 +26,8 @@
       <span [innerHTML]="'aside.projects.project-2' | translate"></span>
     </app-project-item>
   </section>
+
+  <app-features key="songbook" [count]="5"></app-features>
 
   <div class="divider"></div>
 
@@ -57,5 +61,7 @@
     </app-project-item>
 
     <app-project-lang *ngIf="projectsLanguages?.at(1) as value" [languages]="value"></app-project-lang>
+
+    <app-features key="weather" [count]="12"></app-features>
   </section>
 </article>

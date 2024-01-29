@@ -62,6 +62,52 @@
       "en": "Angielski"
     }
   },
+  "projects": {
+    "bible": {
+      "0": "Angular 11 zmigrowany do Angular 15",
+      "1": "Złożony, zagnieżdzony routing",
+      "2": "Moduły leniwie ładowane (lazy loading)",
+      "3": "W pełni oparta na stategii detekcji onPush",
+      "4": "Obrazy leniwie ładowane z wykorzystaniem Intersection observer",
+      "5": "Aplikacja responsywna wsparta przez Breakpoints observer",
+      "6": "Angular Material",
+      "7": "Własne i zewnętrzne API",
+      "8": "System newslettera",
+      "9": "System formularza kontaktowego",
+      "10": "Interaktywne diagramy (Chart.js)"
+    },
+    "songbook": {
+      "0": "Angular 13",
+      "1": "Zbudowano z użyciem Server Site Rendering",
+      "2": "W pełni oparta na stategii detekcji onPush",
+      "3": "Audio HTML5 zintegrowane z dyskiem Google",
+      "4": "Aplikacja responsywna"
+    },
+    "cv": {
+      "0": "Angular 16",
+      "1": "W pełni jako aplikacja standalone",
+      "2": "W pełni oparta na stategii detekcji onPush",
+      "3": "Testy jednostkowe z Jasmine (pokrycie kodu: )",
+      "4": "Testy End to End z Cypress (pokrycie kodu: )",
+      "5": "Tłumaczenia (ngx-translate)",
+      "6": "Galeria obrazów (ng-gallery)",
+      "7": "Aplikacja responsywna"
+    },
+    "weather": {
+      "0": "Angular 16",
+      "1": "W pełni jako aplikacja standalone",
+      "2": "W pełni oparta na stategii detekcji onPush",
+      "3": "Prosty routing w kilkoma ścieżkami i guardami",
+      "4": "Testy jednostkowe z Jasmine (pokrycie kodu: )",
+      "5": "Testy End to End z Cypress (pokrycie kodu: )",
+      "6": "Animacje typu skeleton",
+      "7": "Inegracja z mapami (maplibre-gl)",
+      "8": "Prognoza / historyczna pogoda (weatherapi-com.p.rapidapi.com)",
+      "9": "Sugestie wyszukiwania lokalizacji (api.geoapify.com)",
+      "10": "Szukanie lokalizacji po adresie IP użytkownika (geolocation-db.com)",
+      "11": "Aplikacja responsywna"
+    }
+  },
   "footer": {
     "copyright": "Prawa autorskie szablonu"
   }
