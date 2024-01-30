@@ -13,6 +13,8 @@
 
   <app-features key="bible" [count]="11"></app-features>
 
+  <app-gallery [images]="BibleGallery"></app-gallery>
+
   <div class="divider"></div>
 
   <section>
@@ -28,6 +30,8 @@
   </section>
 
   <app-features key="songbook" [count]="5"></app-features>
+
+  <app-gallery [images]="SongbookGallery"></app-gallery>
 
   <div class="divider"></div>
 
@@ -46,6 +50,10 @@
     <app-project-lang *ngIf="projectsLanguages?.at(0) as value" [languages]="value"></app-project-lang>
   </section>
 
+  <app-features key="cv" [count]="8"></app-features>
+
+  <app-gallery [images]="CvGallery"></app-gallery>
+
   <div class="divider"></div>
 
   <section>
@@ -62,6 +70,9 @@
 
     <app-project-lang *ngIf="projectsLanguages?.at(1) as value" [languages]="value"></app-project-lang>
 
-    <app-features key="weather" [count]="12"></app-features>
   </section>
+
+  <app-features key="weather" [count]="12"></app-features>
+
+  <app-gallery [images]="WeatherGallery"></app-gallery>
 </article>

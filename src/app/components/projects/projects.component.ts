@@ -6,6 +6,7 @@ import { forkJoin } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { BibleGallery, CvGallery, SongbookGallery, WeatherGallery } from './galleries.data';
 import { environment } from '../../../environments/environment';
 import { FeaturesComponent } from './features/features.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -37,6 +38,12 @@ export class ProjectsComponent implements OnInit {
   protected readonly environment = environment;
 
   protected projectsLanguages: GithubLanguages[] = [];
+
+  protected get BibleGallery() { return BibleGallery; }
+  protected get CvGallery() { return CvGallery; }
+  protected get SongbookGallery() { return SongbookGallery; }
+  protected get WeatherGallery() { return WeatherGallery; }
+
 
   private getProjectLanguages$ = forkJoin(
     this.languages.map(project => this.githubService.getProjectLanguages(project)

@@ -1,0 +1,21 @@
+@import 'media';
+@import 'variables';
+
+:host {
+  display: block;
+
+  img {
+    width: calc(25% - 0.5rem);
+    margin: 0.25rem;
+    box-sizing: border-box;
+    border: 1px solid $color-border;
+
+    @include landscape() {
+      width: calc(33.33% - 0.5rem);
+    }
+
+    @include portrait() {
+      width: calc(50% - 0.5rem);
+    }
+  }
+}

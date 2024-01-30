@@ -106,6 +106,26 @@
       "9": "Autocomplete locations (api.geoapify.com)",
       "10": "Finding location by user IP address (geolocation-db.com)",
       "11": "Responsive web design"
+    },
+    "gallery": {
+      "cv-dark": "CV: dark theme version",
+      "cv-light": "CV: light theme version",
+      "cv-part2": "CV: experience, education, projects",
+      "cv-projects": "CV: projects preview",
+      "weather-welcome": "Weather app: welcome page",
+      "weather-main": "Weather app: main page",
+      "weather-map": "Weather app: map page",
+      "weather-settings": "Weather app: settings page",
+      "ap-greek": "Apologetyka Biblijna: greek word",
+      "ap-bible-search": "Apologetyka Biblijna: search in Bible",
+      "ap-bible-compare": "Apologetyka Biblijna: compare Bible translations",
+      "ap-timeline": "Apologetyka Biblijna: flood timeline",
+      "ap-diagram": "Apologetyka Biblijna: mankind history",
+      "ap-homepage": "Apologetyka Biblijna: James Strong System",
+      "bezpieczna-przystan": "Songbook: Bezpieczna Przystan homepage",
+      "spiewnik-pielgrzyma": "Songbook: Spiewnik Pielgrzyma homepage",
+      "spiewnik-pielgrzyma2": "Songbook: songs preview",
+      "bezpieczna-przystan2": "Songbook: audioplayer view"
     }
   },
   "footer": {
