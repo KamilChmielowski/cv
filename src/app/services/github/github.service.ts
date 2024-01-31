@@ -16,8 +16,8 @@ export class GithubService {
     ).pipe(catchError(() => EMPTY));
   }
 
-  getProjectCommits(project: string): Observable<GithubCommits> {
-    return this.httpClient.get<GithubCommits>(
+  getProjectCommits(project: string): Observable<GithubCommits[]> {
+    return this.httpClient.get<GithubCommits[]>(
       environment.github.apiUrl + environment.github.commitsEndpoint.replace('{project}', project)
     ).pipe(catchError(() => EMPTY));
   }

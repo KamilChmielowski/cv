@@ -24,15 +24,15 @@ export interface GithubCommits {
     verification: {
       verified: boolean;
       reason: string;
-      signature: string;
-      payload: string;
+      signature: string | null;
+      payload: string | null;
     }
   },
   url: string;
   html_url: string;
   comments_url: string;
-  author: string;
-  committer: string;
+  author: string | null;
+  committer: string | null;
   parents: [
     {
       sha: string;
