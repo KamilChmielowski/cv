@@ -34,7 +34,7 @@
   }
 
   app-item-chips {
-    padding-top: 0.75rem;
+    padding-top: 1rem;
     display: block;
   }
 
@@ -45,6 +45,10 @@
 }
 
 :host-context(.extra-space) {
+  app-item-chips {
+    padding-top: 1.5rem;
+  }
+
   .desc {
     margin: 2rem 0;
   }

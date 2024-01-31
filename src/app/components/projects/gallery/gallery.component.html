@@ -1,6 +1,0 @@
-<lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
-
-  <a *ngFor="let img of images" [href]="img.srcUrl">
-    <img [alt]="img.altKey | translate" [src]="img.previewUrl"/>
-  </a>
-</lightgallery>

@@ -43,11 +43,25 @@ describe('ProjectsComponent', () => {
   it('should create', () => expect(component).toBeTruthy());
 
   it('should render min 4 projects', () => {
-    const min = 4;
+    const min = fixture.componentInstance.languages.length + 2;
     JasmineUtil.shouldRenderMinElements(fixture, 'section', min);
     JasmineUtil.shouldRenderMinElements(fixture, 'app-project-item', min);
     JasmineUtil.shouldRenderMinElements(fixture, 'app-section-title', min);
+    JasmineUtil.shouldRenderMinElements(fixture, 'app-features', min);
+    JasmineUtil.shouldRenderMinElements(fixture, 'app-gallery', min);
+    JasmineUtil.shouldRenderMinElements(fixture, 'app-project-lang', fixture.componentInstance.languages.length);
     JasmineUtil.shouldRenderMinElements(fixture, '.divider', min - 1);
+  });
+
+  it('should render components in proper order', () => {
+    const sections = fixture.debugElement.queryAll(By.css('section'));
+    const dividers = fixture.debugElement.queryAll(By.css('.divider'));
+
+    expect(sections.every(section => section.nativeElement.nextSibling.localName === 'app-features')).toBeTrue();
+    expect(sections.every(section => section.nativeElement.firstChild.localName === 'app-section-title')).toBeTrue();
+    expect(sections.every(section => section.nativeElement.firstChild.nextSibling.localName === 'app-project-item')).toBeTrue();
+    expect(sections.every(section => section.nativeElement.nextSibling.nextSibling.localName === 'app-gallery')).toBeTrue();
+    expect(dividers.every(divider => divider.nativeElement.previousSibling.localName === 'app-gallery')).toBeTrue();
   });
 
   it('should set valid urls to app-project-item component', () => {
@@ -83,7 +97,7 @@ describe('ProjectsComponent', () => {
   it('should passed translated content to features components', () => {
     const elements = fixture.debugElement.queryAll(By.css('app-features'));
 
-    elements.forEach((element, i) => {
+    elements.forEach(element => {
       Array.from({ length: element.componentInstance.count }, (_, index) => index).forEach(v => {
         translateService.get(`projects.${element.componentInstance.key}.${v}`).subscribe(value => {
           expect(element.nativeElement.textContent).not.toContain(`projects.${element.componentInstance.key}.${v}`);
