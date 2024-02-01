@@ -1,0 +1,27 @@
+<div class="image-row">
+  <button class="image-column" *ngFor="let image of images; let i = index"
+          (click)="openModal(); currentSlide(i + 1)" [attr.aria-label]="image.altKey | translate">
+    <img [src]="image.previewUrl" [alt]="image.altKey | translate">
+  </button>
+</div>
+
+<div class="slide-modal">
+  <button class="btn close" (click)="closeModal()">&times;</button>
+  <button class="btn prev" (click)="moveSlide(-1)">&#10094;</button>
+  <button class="btn next" (click)="moveSlide(1)">&#10095;</button>
+
+  <div class="slide-modal-content">
+    <div class="img-slides" *ngFor="let image of images; let i = index">
+      <img [src]="image.srcUrl" [alt]="image.altKey | translate">
+
+      <div class="image-row image-row-preview">
+        <button *ngFor="let image of images; let j = index"
+                [class.active]="i === j" class="image-column"
+                [attr.aria-label]="image.altKey | translate"
+                (click)="currentSlide(j + 1)">
+          <img class="images" [src]="image.previewUrl" [alt]="image.altKey | translate">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

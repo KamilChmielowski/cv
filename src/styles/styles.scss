@@ -7,6 +7,10 @@ html, body {
   font-family: arial, serif;
   letter-spacing: .05rem;
   line-height: 1.4rem;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 h1, h2, h3 {

@@ -4,18 +4,166 @@
 :host {
   display: block;
 
-  img {
-    width: calc(25% - 0.5rem);
-    margin: 0.25rem;
-    box-sizing: border-box;
-    border: 1px solid $color-border;
+  .slide-modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: $transition-lightbox;
+    overflow: hidden;
 
-    @include landscape() {
-      width: calc(33.33% - 0.5rem);
+    .btn {
+      cursor: pointer;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 4rem;
+      color: $color-active;
+      font-weight: bold;
+      font-size: 1.5rem;
+      transition: 400ms ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: $color-background-dark;
+      }
     }
 
-    @include portrait() {
-      width: calc(50% - 0.5rem);
+    .close {
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+      z-index: 3;
+      height: 3rem;
+    }
+
+    .next {
+      right: 1rem;
+      top: calc(50% - 2rem);
+    }
+
+    .prev {
+      left: 1rem;
+      top: calc(50% - 2rem);
+    }
+
+    .slide-modal-content {
+      .img-slides {
+        display: flex;
+        height: 100vh;
+        margin: auto;
+        flex-flow: column;
+        justify-content: space-evenly;
+
+        @include desktop() {
+          max-width: 80vw;
+        }
+
+        &.hide {
+          display: none;
+        }
+
+        img {
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          opacity: 0;
+          transition: $transition-lightbox;
+          max-height: 80vh;
+
+          @include portrait() {
+            width: 100%;
+          }
+        }
+
+        .image-row-preview {
+          flex-wrap: inherit;
+          justify-content: center;
+
+          @include portrait-landscape() {
+            display: none;
+          }
+
+          .image-column {
+            width: inherit;
+
+            .images {
+              max-height: 15vh;
+              border: none;
+              transition: $transition-hover;
+              background-color: #000;
+            }
+
+            &.active {
+              .images {
+                box-sizing: border-box;
+                border: 2px solid #a5b3ce;
+                filter: brightness(1.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .image-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > .image-column {
+      padding: 0.2rem 0.4rem;
+      width: 25%;
+      box-sizing: border-box;
+
+      @include landscape() {
+        width: 33.33%;
+      }
+
+      @include portrait() {
+        width: 50%;
+      }
+
+      img {
+        border: 1px solid $color-border;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
+
+        &:hover, &:focus {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+:host-context(.displayed) {
+  .slide-modal {
+    display: block;
+  }
+}
+
+:host-context(.visible) {
+  .slide-modal {
+    opacity: 1;
+
+    .slide-modal-content {
+      .img-slides {
+        img {
+          opacity: 1;
+        }
+      }
     }
   }
 }

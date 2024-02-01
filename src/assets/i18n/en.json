@@ -89,9 +89,10 @@
       "2": "Fully based on onPush change detection",
       "3": "Unit tests with Jasmine (test coverage: )",
       "4": "End to End tests with Cypress (test coverage: )",
-      "5": "Translations (ngx-translate)",
-      "6": "Images gallery (ng-gallery)",
-      "7": "Responsive web design"
+      "5": "Github API",
+      "6": "Translations (ngx-translate)",
+      "7": "Custom lightbox image gallery",
+      "8": "Responsive web design"
     },
     "weather": {
       "0": "Angular 16",

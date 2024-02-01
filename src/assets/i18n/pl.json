@@ -89,9 +89,10 @@
       "2": "W pełni oparta na stategii detekcji onPush",
       "3": "Testy jednostkowe z Jasmine (pokrycie kodu: )",
       "4": "Testy End to End z Cypress (pokrycie kodu: )",
-      "5": "Tłumaczenia (ngx-translate)",
-      "6": "Galeria obrazów (ng-gallery)",
-      "7": "Aplikacja responsywna"
+      "5": "API Githuba",
+      "6": "Tłumaczenia (ngx-translate)",
+      "7": "Własna galeria obrazów typu lightbox",
+      "8": "Aplikacja responsywna"
     },
     "weather": {
       "0": "Angular 16",
