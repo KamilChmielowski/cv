@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { GalleryModel } from './gallery.model';
@@ -21,6 +22,7 @@ import { GalleryModel } from './gallery.model';
   standalone: true,
   imports: [
     CommonModule,
+    SvgIconComponent,
     TranslateModule,
   ],
 })

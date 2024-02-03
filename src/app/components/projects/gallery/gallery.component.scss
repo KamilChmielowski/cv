@@ -30,9 +30,19 @@
       font-size: 1.5rem;
       transition: 400ms ease-in-out;
 
-      &:hover,
-      &:focus {
+      &:hover {
         background-color: $color-background-dark;
+      }
+
+      @include desktop() {
+        &:focus {
+          background-color: $color-background-dark;
+        }
+      }
+
+      svg-icon {
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
 
@@ -41,10 +51,14 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      font-size: 2.2rem;
       font-weight: bold;
       z-index: 3;
       height: 3rem;
+
+      svg-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
 
     .next {

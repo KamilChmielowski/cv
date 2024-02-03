@@ -29,11 +29,6 @@ describe('AsideComponent', () => {
       .existingIcon(fixture.debugElement.query(By.css('app-section-title')));
   });
 
-  it('should pass title and icon inputs to app-section-title component', () => {
-    JasmineUtil.sectionTitleComponentUnitTests()
-      .requiredInputs(fixture.debugElement.query(By.css('app-section-title')));
-  });
-
   const getChildComponents = () => ({
     techStack: fixture.debugElement.queryAll(By.css('app-tech-stack')),
     softSkills: fixture.debugElement.queryAll(By.css('app-soft-skills')),

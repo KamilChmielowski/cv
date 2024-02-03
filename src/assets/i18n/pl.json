@@ -109,24 +109,31 @@
       "11": "Aplikacja responsywna"
     },
     "gallery": {
-      "cv-dark": "CV: wersja z ciemną szatą graficzną",
-      "cv-light": "CV: wersja z jasną szatą graficzną",
-      "cv-part2": "CV: doświadczenie, wykształcenie, projekty",
-      "cv-projects": "CV: przegląd projektów",
-      "weather-welcome": "Weather app: strona powitalna",
-      "weather-main": "Weather app: strona główna",
-      "weather-map": "Weather app: strona z mapami",
-      "weather-settings": "Weather app: strona ustawień",
-      "ap-greek": "Apologetyka Biblijna: słowo greckie",
-      "ap-bible-search": "Apologetyka Biblijna: szukaj w Biblii",
-      "ap-bible-compare": "Apologetyka Biblijna: porównaj przekłady biblijne",
-      "ap-timeline": "Apologetyka Biblijna: linia czasowa potopu",
-      "ap-diagram": "Apologetyka Biblijna: historia ludzkości",
-      "ap-homepage": "Apologetyka Biblijna: System Jamesa Stronga",
-      "bezpieczna-przystan": "Songbook: Bezpieczna Przystań strona powitalna",
-      "spiewnik-pielgrzyma": "Songbook: Śpiewnik Pielgrzyma strona powitalna",
-      "spiewnik-pielgrzyma2": "Songbook: przegląd pieśni",
-      "bezpieczna-przystan2": "Songbook: widok odtwarzacza audio"
+      "image": {
+        "cv-dark": "CV: wersja z ciemną szatą graficzną",
+        "cv-light": "CV: wersja z jasną szatą graficzną",
+        "cv-part2": "CV: doświadczenie, wykształcenie, projekty",
+        "cv-projects": "CV: przegląd projektów",
+        "weather-welcome": "Weather app: strona powitalna",
+        "weather-main": "Weather app: strona główna",
+        "weather-map": "Weather app: strona z mapami",
+        "weather-settings": "Weather app: strona ustawień",
+        "ap-greek": "Apologetyka Biblijna: słowo greckie",
+        "ap-bible-search": "Apologetyka Biblijna: szukaj w Biblii",
+        "ap-bible-compare": "Apologetyka Biblijna: porównaj przekłady biblijne",
+        "ap-timeline": "Apologetyka Biblijna: linia czasowa potopu",
+        "ap-diagram": "Apologetyka Biblijna: historia ludzkości",
+        "ap-homepage": "Apologetyka Biblijna: System Jamesa Stronga",
+        "bezpieczna-przystan": "Songbook: Bezpieczna Przystań strona powitalna",
+        "spiewnik-pielgrzyma": "Songbook: Śpiewnik Pielgrzyma strona powitalna",
+        "spiewnik-pielgrzyma2": "Songbook: przegląd pieśni",
+        "bezpieczna-przystan2": "Songbook: widok odtwarzacza audio"
+      },
+      "aria": {
+        "close-btn": "Zamknij galerię obrazów",
+        "prev-btn": "Poprzedni obraz",
+        "next-btn": "Następny obraz"
+      }
     }
   },
   "footer": {

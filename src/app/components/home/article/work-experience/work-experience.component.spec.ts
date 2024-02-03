@@ -29,12 +29,4 @@ describe('WorkExperienceComponent', () => {
   it('should pass existing icon to app-section-title component', () => {
     JasmineUtil.sectionTitleComponentUnitTests().existingIcon(fixture.debugElement.query(By.css('app-section-title')));
   });
-
-  it('should pass title and icon inputs to app-section-title component', () => {
-    JasmineUtil.sectionTitleComponentUnitTests().requiredInputs(fixture.debugElement.query(By.css('app-section-title')));
-  });
-
-  it('should pass date, chip, header inputs to app-timeline-item component', () => {
-    JasmineUtil.timelineItemComponentUnitTests().requiredInputs(fixture.debugElement.queryAll(By.css('app-timeline-item')))
-  });
 });

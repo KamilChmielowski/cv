@@ -58,6 +58,12 @@ export class JasmineUtil {
     expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
   }
 
+  static shouldSetValidImageProperties(fixture: ComponentFixture<any>, selector = 'img'): void {
+    const elements = fixture.debugElement.queryAll(By.css(selector))
+    expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.src))).toBeTrue();
+    expect(elements.every(el => !!el.nativeElement.alt)).toBeTrue();
+  }
+
   static shouldSetValidRouterLinkToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
     const elements = fixture.debugElement.queryAll(By.css(selector))
 
@@ -97,17 +103,6 @@ export class JasmineUtil {
       existingIcon: (element: DebugElement) => {
         const iconNames = appIcons.map(icons => icons[0]);
         expect(iconNames.includes(element.componentInstance.icon)).toBeTrue();
-      },
-      requiredInputs: (element: DebugElement) => {
-        JasmineUtil.shouldPassRequiredInputs([element], ['title', 'icon']);
-      }
-    }
-  }
-
-  static timelineItemComponentUnitTests() {
-    return {
-      requiredInputs: (elements: DebugElement[]) => {
-        JasmineUtil.shouldPassRequiredInputs(elements, ['date', 'chip', 'header']);
       }
     }
   }

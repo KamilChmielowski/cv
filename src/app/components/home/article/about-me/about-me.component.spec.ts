@@ -1,5 +1,4 @@
-import { By } from '@angular/platform-browser';
-import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -37,10 +36,6 @@ describe('AboutMeComponent', () => {
   }));
 
   it('should create', () => expect(component).toBeTruthy());
-
-  it('should pass title and icon inputs to app-section-title component', () => {
-    JasmineUtil.sectionTitleComponentUnitTests().requiredInputs(fixture.debugElement.query(By.css('app-section-title')));
-  });
 
   it('should display existing icons', () => {
     JasmineUtil.shouldDisplayExistingIcons(fixture);

@@ -6,9 +6,17 @@
 </div>
 
 <div class="slide-modal">
-  <button class="btn close" (click)="closeModal()">&times;</button>
-  <button class="btn prev" (click)="moveSlide(-1)">&#10094;</button>
-  <button class="btn next" (click)="moveSlide(1)">&#10095;</button>
+  <button class="btn close" [attr.aria-label]="'projects.gallery.aria.close-btn'" (click)="closeModal()">
+    <svg-icon name="close"></svg-icon>
+  </button>
+
+  <button class="btn prev" [attr.aria-label]="'projects.gallery.aria.prev-btn'" (click)="moveSlide(-1)">
+    <svg-icon name="left"></svg-icon>
+  </button>
+
+  <button class="btn next" [attr.aria-label]="'projects.gallery.aria.next-btn'" (click)="moveSlide(1)">
+    <svg-icon name="right"></svg-icon>
+  </button>
 
   <div class="slide-modal-content">
     <div class="img-slides" *ngFor="let image of images; let i = index">
