@@ -12,29 +12,37 @@
     app-change-lang {
       position: absolute;
       top: 1rem;
-      left: 1rem;
+      left: -1rem;
+
+      @include portrait {
+        left: 0;
+      }
     }
 
     app-change-theme {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      right: -1rem;
+
+      @include portrait() {
+        right: 0;
+      }
     }
 
     app-nav {
       position: absolute;
 
       top: -4.5rem;
-      right: 0;
+      right: -2rem;
 
       @include desktop() {
         top: 0;
-        right: -4.5rem;
+        right: -6.5rem;
       }
 
       @include portrait() {
         top: -9.5rem;
-        right: 0;
+        right: -0.8rem;
       }
     }
 
@@ -101,6 +109,7 @@
       border-bottom: 1px solid $color-border;
       padding: 1rem;
       font-size: .875rem;
+      transition: border-color $transition-theme;
 
       @include portrait-tablet() {
         flex-wrap: wrap;
@@ -135,6 +144,10 @@
           @include portrait-landscape() {
             margin-bottom: 0.5rem;
           }
+
+          @include portrait() {
+            margin-right: 0;
+          }
         }
 
         svg-icon {
@@ -156,6 +169,7 @@
       height: auto;
       border: 8px solid $color-background;
       border-radius: 50%;
+      transition: border-color $transition-theme;
     }
   }
 }

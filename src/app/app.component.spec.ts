@@ -1,5 +1,6 @@
 import { By } from '@angular/platform-browser';
-import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
@@ -25,7 +26,9 @@ describe('AppComponent', () => {
       providers: [
         { provide: SvgIconRegistryService, useValue: svgIconRegistrySpy }
       ],
-    });
+    }).overrideComponent(AppComponent, {
+      set: { changeDetection: ChangeDetectionStrategy.Default }
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     translateService = TestBed.inject(TranslateService);
@@ -68,7 +71,31 @@ describe('AppComponent', () => {
 
     component.ngOnInit();
 
+    flush();
+
     expect(translateService.setDefaultLang).toHaveBeenCalledOnceWith(component.defaultLang);
     expect(translateService.use).toHaveBeenCalledOnceWith(component.defaultLang);
+  }));
+
+  it('should manage starting-app class', fakeAsync(() => {
+    expect(fixture.debugElement.classes['starting-app']).withContext('Missing class on app tag at the beginning').toBeTrue();
+    expect(fixture.debugElement.parent?.classes['starting-app']).withContext('Missing class on body tag at the beginning').toBeTrue();
+    expect(fixture.debugElement.parent?.parent?.classes['starting-app']).withContext('Missing class on html tag at the beginning').toBeTrue();
+
+    component.ngOnInit();
+
+    tick(599);
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.classes['starting-app']).withContext('Missing class on app tag after 599ms').toBeTrue();
+    expect(fixture.debugElement.parent?.classes['starting-app']).withContext('Missing class on body tag after 599ms').toBeTrue();
+    expect(fixture.debugElement.parent?.parent?.classes['starting-app']).withContext('Missing class on html tag after 599ms').toBeTrue();
+
+    flush();
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.classes['starting-app']).withContext('Class on app tag should be removed after 600ms').toBeFalsy();
+    expect(fixture.debugElement.parent?.classes['starting-app']).withContext('Class on body tag should be removed after 600ms').toBeFalsy();
+    expect(fixture.debugElement.parent?.parent?.classes['starting-app']).withContext('Class on html tag should be removed after 600ms').toBeFalsy();
   }));
 });

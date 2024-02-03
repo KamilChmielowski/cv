@@ -14,7 +14,7 @@
 
     @include portrait-tablet() {
       width: 100%;
-      border-right: none;
+      padding-right: 0;
     }
   }
 

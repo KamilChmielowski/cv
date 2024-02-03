@@ -1,11 +1,11 @@
 <div class="root-wrapper">
   <app-header></app-header>
 
-  <main>
+  <main [@routeAnimations]="getRouteAnimationData()">
     <router-outlet></router-outlet>
   </main>
-
-  <footer>
-    {{ 'footer.copyright' | translate }} © <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a>
-  </footer>
 </div>
+
+<footer>
+  {{ 'footer.copyright' | translate }} © <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a>
+</footer>

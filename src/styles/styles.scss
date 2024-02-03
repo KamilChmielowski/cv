@@ -7,6 +7,11 @@ html, body {
   font-family: arial, serif;
   letter-spacing: .05rem;
   line-height: 1.4rem;
+  transition: background-color $transition-theme;
+
+  &.starting-app {
+    transition: none;
+  }
 
   &.no-scroll {
     overflow: hidden;
