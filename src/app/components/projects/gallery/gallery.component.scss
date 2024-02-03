@@ -40,9 +40,19 @@
         }
       }
 
+      @include portrait() {
+        width: 2.5rem;
+        height: 3.5rem;
+      }
+
       svg-icon {
         width: 2.5rem;
         height: 2.5rem;
+
+        @include portrait() {
+          width: 2rem;
+          height: 2rem;
+        }
       }
     }
 

@@ -79,10 +79,6 @@ export class JasmineUtil {
     })).toBeTrue();
   }
 
-  static shouldPassRequiredInputs(elements: DebugElement[], inputNames: string[]): void {
-    expect(elements.every(el => inputNames.every(name => !!el.componentInstance[name]))).toBeTrue();
-  }
-
   static shouldRenderNgContent(component: any, text = 'ng-content test'): void {
     const testFixture = TestBed.createComponent(component);
     expect(testFixture.nativeElement.textContent).toContain(text);
