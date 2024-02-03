@@ -104,12 +104,19 @@
 
     .contact {
       display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
       list-style: none;
       border-top: 1px solid $color-border;
       border-bottom: 1px solid $color-border;
       padding: 1rem;
       font-size: .875rem;
       transition: border-color $transition-theme;
+
+      @include desktop() {
+        padding: 1rem 0;
+      }
 
       @include portrait-tablet() {
         flex-wrap: wrap;
