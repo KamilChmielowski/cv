@@ -16,7 +16,7 @@
     }
 
     app-education {
-      @include portrait-landscape() {
+      @include portrait-tablet() {
         display: block;
         border-bottom: 1px solid $color-border;
         padding-bottom: 3rem;

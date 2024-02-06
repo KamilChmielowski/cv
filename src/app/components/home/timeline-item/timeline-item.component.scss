@@ -4,12 +4,13 @@
   .content {
     padding-left: 2.5rem;
     position: relative;
+    margin-bottom: 2rem;
 
     &:before {
       content: "";
       display: inline-block;
       width: 3px;
-      height: calc(100% + 10px);
+      height: calc(100% + 10px + 2rem);
       background: $color-background-dark;
       left: 13px;
       top: 16px;
@@ -49,6 +50,16 @@
 
     h3 {
       margin-top: 0;
+    }
+  }
+}
+
+:host-context(.last) {
+  .content {
+    margin-bottom: 0;
+
+    &:before {
+      height: calc(100% + 10px);
     }
   }
 }

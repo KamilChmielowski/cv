@@ -5,12 +5,6 @@
   width: 100%;
 
   article {
-    section {
-      @include desktop() {
-        width: 70%;
-      }
-    }
-
     app-features {
       display: block;
       margin-top: 1.5rem;

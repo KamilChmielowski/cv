@@ -6,6 +6,12 @@
     margin-bottom: 1rem;
   }
 
+  app-timeline-item {
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+
   .name {
     color: $color-active;
   }
