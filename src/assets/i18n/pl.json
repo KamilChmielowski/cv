@@ -92,7 +92,8 @@
       "5": "API Githuba",
       "6": "Tłumaczenia (ngx-translate)",
       "7": "Własna galeria obrazów typu lightbox",
-      "8": "Aplikacja responsywna"
+      "8": "Aplikacja responsywna",
+      "9": "Animacja przejścia dla router outlet"
     },
     "weather": {
       "0": "Angular 16",

@@ -92,7 +92,8 @@
       "5": "Github API",
       "6": "Translations (ngx-translate)",
       "7": "Custom lightbox image gallery",
-      "8": "Responsive web design"
+      "8": "Responsive web design",
+      "9": "Fade router outlet animation"
     },
     "weather": {
       "0": "Angular 16",
