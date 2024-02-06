@@ -29,14 +29,15 @@
       font-weight: bold;
       font-size: 1.5rem;
       transition: 400ms ease-in-out;
+      background-color: rgba(red(#19202e), green(#19202e), blue(#19202e), 0.35);
 
       &:hover {
-        background-color: $color-background-dark;
+        background-color: #19202e
       }
 
       @include desktop() {
         &:focus {
-          background-color: $color-background-dark;
+          background-color: #19202e
         }
       }
 
@@ -52,6 +53,14 @@
         @include portrait() {
           width: 2rem;
           height: 2rem;
+        }
+
+        svg {
+          fill: white;
+
+          &:hover {
+            fill: #629feb;
+          }
         }
       }
     }
@@ -126,13 +135,16 @@
               border: none;
               transition: $transition-hover;
               background-color: #000;
+
+              &:hover {
+                transform: scale(1.05);
+              }
             }
 
             &.active {
               .images {
                 box-sizing: border-box;
                 border: 2px solid #a5b3ce;
-                filter: brightness(1.5);
               }
             }
           }
