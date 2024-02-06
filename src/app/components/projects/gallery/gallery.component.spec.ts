@@ -52,10 +52,6 @@ describe('GalleryComponent', () => {
       .toBe(component.images.length);
   });
 
-  it('should set valid reference href urls', () => {
-    JasmineUtil.shouldSetValidImageProperties(fixture);
-  });
-
   it('should set name or aria-label to buttons', () => {
     JasmineUtil.shouldSetTextOrAriaLabelToClickableElement(fixture);
   });

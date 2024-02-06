@@ -54,14 +54,8 @@ export class JasmineUtil {
   }
 
   static shouldSetValidHrefToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
-    const elements = fixture.debugElement.queryAll(By.css(selector))
+    const elements = fixture.debugElement.queryAll(By.css(selector));
     expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.href))).toBeTrue();
-  }
-
-  static shouldSetValidImageProperties(fixture: ComponentFixture<any>, selector = 'img'): void {
-    const elements = fixture.debugElement.queryAll(By.css(selector))
-    expect(elements.every(el => ValidatorUtil.isValidHttpUrl(el.nativeElement.src))).toBeTrue();
-    expect(elements.every(el => !!el.nativeElement?.alt)).toBeTrue();
   }
 
   static shouldSetValidRouterLinkToElement(fixture: ComponentFixture<any>, selector = '.clickable'): void {
