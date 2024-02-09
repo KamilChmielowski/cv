@@ -4,9 +4,10 @@ import { ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core
 import { TranslateService } from '@ngx-translate/core';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
+import { AppModule, HttpLoaderFactory } from './app.module';
 import { appIconsMap } from './app-icons-map';
 import { JasmineUtil } from './utils/jasmine.util';
 import { Languages } from './components/header/change-lang/change-lang.component';
@@ -98,4 +99,13 @@ describe('AppComponent', () => {
     expect(fixture.debugElement.parent?.classes['starting-app']).withContext('Class on body tag should be removed after 600ms').toBeFalsy();
     expect(fixture.debugElement.parent?.parent?.classes['starting-app']).withContext('Class on html tag should be removed after 600ms').toBeFalsy();
   }));
+});
+
+describe('should cover HttpLoaderFactory', () => {
+  it('should initialize TranslateHttpLoader with proper params', () => {
+    const httpClient = {} as any;
+    expect(HttpLoaderFactory(httpClient)).toEqual(
+      new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json')
+    );
+  });
 });
