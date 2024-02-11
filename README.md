@@ -1,13 +1,21 @@
 # Curriculum vitae: Kamil Chmielowski
 
-This project is my web CV version, implemented in Angular 16.
+This project is my web CV version in two language versions.
+
+https://kamilchmielowski-dev.web.app/
 
 ## Features
 
-* en & pl translations (ngx-translate)
-* dark & light theme (css vars)
-* server date (public [API](https://world-clock.p.rapidapi.com/json/utc/now))
-* svg icons (angular-svg-icon)
+* Angular 16
+* Fully standalone app
+* Fully based on onPush change detection
+* Unit tests with Jasmine (<a href="https://kamilchmielowski-cv-unit-tests.web.app/">code coverage</a>: 100% statements & lines)
+* End to End tests with Cypress
+* Github API
+* Translations (ngx-translate)
+* Custom lightbox image gallery
+* Responsive web design
+* Fade router outlet animation
 
 ### Contact with me
 
