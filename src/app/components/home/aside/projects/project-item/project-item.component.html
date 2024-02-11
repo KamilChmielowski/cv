@@ -3,9 +3,15 @@
     <span class="dot"></span>{{ title }}
   </a>
 
-  <a *ngIf="githubUrl" [href]="githubUrl" class="clickable" [attr.aria-label]="'aside.projects.link-to-github' | translate">
-    <svg-icon name="github"></svg-icon>
-  </a>
+  <div class="icons">
+    <a *ngIf="jasmineUrl" [href]="jasmineUrl" class="clickable" [attr.aria-label]="'aside.projects.link-to-github' | translate">
+      <svg-icon name="jasmine"></svg-icon>
+    </a>
+
+    <a *ngIf="githubUrl" [href]="githubUrl" class="clickable" [attr.aria-label]="'aside.projects.link-to-github' | translate">
+      <svg-icon name="github"></svg-icon>
+    </a>
+  </div>
 </div>
 
 <app-item-chips [chips]="chips"></app-item-chips>

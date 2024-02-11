@@ -24,4 +24,5 @@ export class ProjectItemComponent {
   @Input({ required: true }) href = '';
   @Input() chips?: string[];
   @Input() githubUrl?: string;
+  @Input() jasmineUrl?: string;
 }

@@ -1,5 +1,3 @@
 <ul>
-  <li *ngFor="let i of count | array">
-    {{ 'projects.' + key + '.' + i | translate }}
-  </li>
+  <li *ngFor="let i of count | array" [innerHTML]="'projects.' + key + '.' + i | translate"></li>
 </ul>

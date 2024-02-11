@@ -31,6 +31,14 @@
         }
       }
     }
+
+    .icons {
+      display: flex;
+
+      a {
+        margin-left: 0.5rem;
+      }
+    }
   }
 
   app-item-chips {

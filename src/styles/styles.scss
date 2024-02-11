@@ -42,6 +42,10 @@ svg-icon {
     fill: $color-active;
     width: 100%;
     height: 100%;
+
+    g {
+      transition: $transition-hover;
+    }
   }
 }
 
@@ -56,6 +60,10 @@ a {
     svg-icon {
       svg {
         fill: $color-hover;
+
+        g {
+          fill: $color-hover;
+        }
       }
     }
   }
