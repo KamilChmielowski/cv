@@ -180,3 +180,11 @@
     }
   }
 }
+
+:host-context(.no-scroll) {
+  header {
+    app-nav {
+      right: calc(16rem + $width-scroll-bar);
+    }
+  }
+}

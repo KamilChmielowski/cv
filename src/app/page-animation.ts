@@ -1,5 +1,7 @@
 import { animate, query, style, transition, trigger } from '@angular/animations';
 
+export const fadeAnimationTimeout = 400;
+
 export const fadeAnimation = trigger('routeAnimations', [
   transition('* => *', [
     query(
@@ -23,7 +25,7 @@ export const fadeAnimation = trigger('routeAnimations', [
           height: '100%',
           width: '100%'
         }),
-        animate('0.4s', style({ opacity: 0 }))
+        animate(`${fadeAnimationTimeout}ms`, style({ opacity: 0 }))
       ],
       { optional: true }
     ),
@@ -36,7 +38,7 @@ export const fadeAnimation = trigger('routeAnimations', [
           height: '100%',
           width: '100%'
         }),
-        animate('0.4s', style({ opacity: 1 }))
+        animate(`${fadeAnimationTimeout}ms`, style({ opacity: 1 }))
       ],
       { optional: true }
     )

@@ -36,7 +36,7 @@ export class GalleryComponent {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private elementRef: ElementRef,
+    private elementRef: ElementRef<HTMLElement>,
   ) {}
 
   protected openModal(): void {

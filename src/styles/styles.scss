@@ -1,3 +1,4 @@
+@import 'scrollbar';
 @import 'variables';
 
 html, body {
@@ -15,6 +16,7 @@ html, body {
 
   &.no-scroll {
     overflow: hidden;
+    margin-right: $width-scroll-bar;
   }
 }
 

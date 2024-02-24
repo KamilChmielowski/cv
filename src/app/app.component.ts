@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inject, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
-import { SvgIconRegistryService } from 'angular-svg-icon';
 
+import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateService } from '@ngx-translate/core';
 
 import { appIconsMap } from './app-icons-map';
-import { fadeAnimation } from './animations';
+import { fadeAnimation } from './page-animation';
 import { Languages } from './components/header/change-lang/change-lang.component';
 
 @Component({
