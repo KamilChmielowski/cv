@@ -5,7 +5,7 @@
   background-color: $color-background;
   padding: 0.5rem;
   display: block;
-  transition: $transition-theme;
+  transition: background-color $transition-theme;
 
   nav {
     display: flex;

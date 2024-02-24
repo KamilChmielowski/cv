@@ -38,6 +38,12 @@
       @include desktop() {
         top: 0;
         right: -6.5rem;
+
+        &.sticky {
+          position: fixed;
+          right: inherit;
+          top: 1rem;
+        }
       }
 
       @include portrait() {
