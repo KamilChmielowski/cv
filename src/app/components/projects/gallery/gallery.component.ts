@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { DomService } from '../../../services/dom/dom.service';
 import { GalleryModel } from './gallery.model';
 
 @Component({
@@ -36,6 +37,7 @@ export class GalleryComponent {
 
   constructor(
     private cdr: ChangeDetectorRef,
+    private domService: DomService,
     private elementRef: ElementRef<HTMLElement>,
   ) {}
 
@@ -45,7 +47,7 @@ export class GalleryComponent {
       this.isVisible = true;
       this.cdr.markForCheck();
     });
-    window.document.body.classList.add('no-scroll');
+    this.domService.getWindow().document.body.classList.add('no-scroll');
   }
 
   protected closeModal(): void {
@@ -54,7 +56,7 @@ export class GalleryComponent {
       this.isDisplayed = false;
       this.cdr.markForCheck();
     }, 450);
-    window.document.body.classList.remove('no-scroll');
+    this.domService.getWindow().document.body.classList.remove('no-scroll');
   }
 
   protected moveSlide(n: number): void {

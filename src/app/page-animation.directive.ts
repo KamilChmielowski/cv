@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { filter, map, Subscription } from 'rxjs';
 
+import { DomService } from './services/dom/dom.service';
 import { fadeAnimationTimeout } from './page-animation';
 
 @Directive({
@@ -20,6 +21,7 @@ export class PageAnimationDirective implements OnInit, OnDestroy {
   private timeoutHandle!: NodeJS.Timeout;
 
   constructor(
+    private domService: DomService,
     private elementRef: ElementRef<HTMLElement>,
     private router: Router,
   ) {}
@@ -34,10 +36,10 @@ export class PageAnimationDirective implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event']) private onScroll(): void {
     if (!this.isScrollable) {
-      window.scrollTo(this.prevScrollX, this.prevScrollY);
+      this.domService.getWindow().scrollTo(this.prevScrollX, this.prevScrollY);
     } else {
-      this.prevScrollX = window.scrollX;
-      this.prevScrollY = window.scrollY;
+      this.prevScrollX = this.domService.getWindow().scrollX;
+      this.prevScrollY = this.domService.getWindow().scrollY;
     }
   }
 
