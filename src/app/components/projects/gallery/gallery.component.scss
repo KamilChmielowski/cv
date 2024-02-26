@@ -113,6 +113,7 @@
           opacity: 0;
           transition: $transition-lightbox;
           max-height: 80vh;
+          color: #a5b3ce;
 
           @include portrait() {
             width: 100%;
