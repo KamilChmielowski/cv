@@ -6,10 +6,10 @@ import {
   HostListener,
 } from '@angular/core';
 
+import { DomService } from '../../services/dom/dom.service';
 import { environment } from '../../../environments/environment';
 import { HeaderImports } from './header.imports';
 import { NavComponent } from './nav/nav.component';
-import { DomUtil } from '../../utils/dom.util';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +28,9 @@ export class HeaderComponent implements AfterViewInit {
 
   protected navFixedLeftPos!: number;
 
-  constructor(private elementRef: ElementRef<HTMLElement>,) {}
+  constructor(
+    private elementRef: ElementRef<HTMLElement>,
+  ) {}
 
   ngAfterViewInit(): void {
     this.updateNavFixedLeftPos();
@@ -40,6 +42,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   private updateNavFixedLeftPos(): void {
-    this.navFixedLeftPos = this.elementRef.nativeElement.getBoundingClientRect().right + DomUtil.remToPixels(3);
+    this.navFixedLeftPos = this.elementRef.nativeElement.getBoundingClientRect().right + DomService.remToPixels(3);
   }
 }
