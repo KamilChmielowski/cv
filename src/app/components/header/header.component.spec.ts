@@ -1,5 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ElementRef } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { HeaderComponent } from './header.component';
@@ -16,7 +17,10 @@ describe('HeaderComponent', () => {
         ...HeaderImports.imports,
         RouterTestingModule,
       ])],
-      providers: [JasmineUtil.svgIconSpyProvider()],
+      providers: [
+        JasmineUtil.svgIconSpyProvider(),
+        { provide: ElementRef, useValue: { nativeElement: { getBoundingClientRect: () => ({ right: 400 })  } } }
+      ],
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
@@ -57,5 +61,15 @@ describe('HeaderComponent', () => {
 
   it('should render one header wrapper element', () => {
     JasmineUtil.shouldRenderOneWrapperElement(fixture, 'header')
+  });
+
+  it('should update navFixedLeftPos when window is resized', () => {
+    const right = (component as any).elementRef.nativeElement.getBoundingClientRect().right;
+    const navFixedLeftPosSnapshot = (component as any).navFixedLeftPos;
+
+    spyOn((component as any).elementRef.nativeElement, 'getBoundingClientRect').and.returnValue({ right: right + 1 });
+    window.dispatchEvent(new Event('resize'));
+
+    expect(navFixedLeftPosSnapshot).toBeLessThan((component as any).navFixedLeftPos);
   });
 });
