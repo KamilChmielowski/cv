@@ -4,7 +4,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { DomMock } from '../../../services/dom/dom.mock';
 import { DomService } from '../../../services/dom/dom.service';
 import { JasmineUtil } from '../../../utils/jasmine.util';
 import { NavComponent } from './nav.component';
@@ -16,7 +15,7 @@ describe('NavComponent', () => {
   let serviceMock: any;
 
   beforeEach(() => {
-    serviceMock = DomMock.getService;
+    serviceMock = jasmine.createSpyObj('WindowService', ['getWindow' , 'isDesktop', 'remToPixels']);
 
     TestBed.configureTestingModule({
       imports: [JasmineUtil.moduleWithTranslations([
@@ -63,7 +62,13 @@ describe('NavComponent', () => {
 
   it('should fixed position when scrollY is above param value in rem',() => {
     const fixedPositionBreakpoint = DomService.remToPixels((component as any).fixedScrollYInRem);
-    DomMock.init(serviceMock, fixedPositionBreakpoint + 1, fixedPositionBreakpoint);
+
+    serviceMock.getWindow.and.returnValue({
+      scrollY: fixedPositionBreakpoint + 1,
+      matchMedia: () => ({ matches: true })
+    });
+    serviceMock.isDesktop.and.returnValue(true);
+    serviceMock.remToPixels.and.returnValue(fixedPositionBreakpoint);
 
     component.fixedLeft = 500;
     component.trackScrollPosition();
@@ -74,7 +79,12 @@ describe('NavComponent', () => {
   });
 
   it('should absolute position when scrollY is below param value in rem',() => {
-    DomMock.init(serviceMock, 0, DomService.remToPixels((component as any).fixedScrollYInRem));
+    serviceMock.getWindow.and.returnValue({
+      scrollY: 0,
+      matchMedia: () => ({ matches: true })
+    });
+    serviceMock.isDesktop.and.returnValue(true);
+    serviceMock.remToPixels.and.returnValue(DomService.remToPixels((component as any).fixedScrollYInRem));
 
     component.fixedLeft = 0;
     component.trackScrollPosition();
