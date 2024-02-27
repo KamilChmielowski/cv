@@ -1,16 +1,16 @@
-import { Directive, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 import { filter, map, Subscription } from 'rxjs';
 
-import { DomService } from './services/dom/dom.service';
+import { DomService } from '../../services/dom/dom.service';
 import { fadeAnimationTimeout } from './page-animation';
 
 @Directive({
   selector: '[pageAnimation]',
   standalone: true,
 })
-export class PageAnimationDirective implements OnInit, OnDestroy {
+export class PageAnimationDirective implements OnInit, AfterViewInit, OnDestroy {
   private readonly subscription = new Subscription();
 
   private isScrollable = true;
@@ -28,6 +28,10 @@ export class PageAnimationDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.observeNavigationEnd();
+  }
+
+  ngAfterViewInit(): void {
+    this.maxClientHeight = this.elementRef.nativeElement.clientHeight;
   }
 
   ngOnDestroy(): void {

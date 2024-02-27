@@ -10,7 +10,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
-import { PageAnimationDirective } from './page-animation.directive';
+import { PageAnimationDirective } from './directives/page-animation/page-animation.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');

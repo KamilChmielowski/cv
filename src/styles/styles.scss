@@ -45,6 +45,10 @@ svg-icon {
     width: 100%;
     height: 100%;
 
+    &.clear-trans {
+      transition: none;
+    }
+
     g {
       transition: $transition-hover;
     }

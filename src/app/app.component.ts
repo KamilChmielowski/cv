@@ -6,7 +6,7 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateService } from '@ngx-translate/core';
 
 import { appIconsMap } from './app-icons-map';
-import { fadeAnimation } from './page-animation';
+import { fadeAnimation } from './directives/page-animation/page-animation';
 import { Languages } from './components/header/change-lang/change-lang.component';
 
 @Component({
