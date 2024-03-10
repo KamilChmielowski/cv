@@ -26,4 +26,14 @@ describe('TechStackComponent', () => {
 
     elements.forEach(element => expect(element.nativeElement.textContent).toBeTruthy());
   });
+
+  it('should pass percent value between 0 and 100', () => {
+    const elements = fixture.debugElement.queryAll(By.css('app-progress-bar'));
+
+    elements.forEach(element => {
+      const value = element.componentInstance.percent;
+      expect(value).toBeGreaterThanOrEqual(0);
+      expect(value).toBeLessThanOrEqual(100);
+    });
+  });
 });
