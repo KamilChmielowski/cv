@@ -16,7 +16,7 @@
   </h3>
 
   <ul class="contact">
-    <li>
+    <li data-cy="header-tel">
       <svg-icon name="phone"></svg-icon>
 
       <app-copy-text [aria]="'header.aria.tel' | translate"
@@ -25,13 +25,13 @@
       ></app-copy-text>
     </li>
 
-    <li>
+    <li data-cy="header-email">
       <svg-icon name="email"></svg-icon>
 
       <app-copy-text [aria]="'header.aria.email' | translate" [text]="environment.contact.email"></app-copy-text>
     </li>
 
-    <li>
+    <li data-cy="header-website">
       <svg-icon name="website"></svg-icon>
 
       <app-copy-text [aria]="'header.aria.website' | translate"
