@@ -5,12 +5,14 @@
     color: $color-active;
     font-size: .875rem;
     margin-bottom: 0.5rem;
+    transition: $transition-theme;
   }
 
   .progress-bar {
     border-radius: 0.4rem;
     height: 0.4rem;
-    background: $color-background-dark;
+    background-color: $color-background-dark;
+    transition: $transition-theme;
 
     margin-bottom: 1.25rem;
 

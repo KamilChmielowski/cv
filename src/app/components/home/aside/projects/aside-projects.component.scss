@@ -1,8 +1,13 @@
 :host {
   app-project-item {
+    display: block;
+
     &:first-of-type {
-      display: block;
-      margin-top: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
     }
   }
 }

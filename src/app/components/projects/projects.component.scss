@@ -5,6 +5,11 @@
   width: 100%;
 
   article {
+    app-section-title {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
     app-features {
       display: block;
       margin-top: 1.5rem;
@@ -14,7 +19,7 @@
     .divider {
       border-top: 1px solid $color-border;
       margin-top: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
     }
   }
 }

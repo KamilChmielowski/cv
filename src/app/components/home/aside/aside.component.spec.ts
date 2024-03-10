@@ -32,7 +32,7 @@ describe('AsideComponent', () => {
   const getChildComponents = () => ({
     techStack: fixture.debugElement.queryAll(By.css('app-tech-stack')),
     softSkills: fixture.debugElement.queryAll(By.css('app-soft-skills')),
-    projects: fixture.debugElement.queryAll(By.css('app-projects')),
+    projects: fixture.debugElement.queryAll(By.css('app-aside-projects')),
     languages: fixture.debugElement.queryAll(By.css('app-languages')),
   });
 

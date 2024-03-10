@@ -45,6 +45,13 @@ $breakpoint-desktop: 1024px;
   }
 }
 
+// 480px up
+@mixin landscape-desktop {
+  @media only screen and (min-width: $breakpoint-landscape) {
+    @content;
+  }
+}
+
 // 1024px up
 @mixin desktop {
   @media only screen and (min-width: $breakpoint-desktop) {

@@ -1,3 +1,4 @@
+@import 'media';
 @import 'variables';
 
 :host {
@@ -5,20 +6,29 @@
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    margin: 0;
-    padding: 1rem 0;
     font-size: 1rem;
+    background-color: $color-section;
+    transition: $transition-theme;
+
+    @include landscape-desktop() {
+      margin: 0 -0.5rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    @include portrait() {
+      margin: 0 -0.8rem 2rem;
+      padding: 0.3rem 0.8rem;
+    }
 
     .icon-wrapper {
       margin-right: 0.5rem;
-      background-color: $color-background-dark;
       width: 2.5rem;
       height: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      transition: background-color $transition-theme;
+      transition: $transition-theme;
     }
   }
 }

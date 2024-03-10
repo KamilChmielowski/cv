@@ -7,7 +7,7 @@ import { environment } from '../../../../../environments/environment';
 import { ProjectItemComponent } from './project-item/project-item.component';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-aside-projects',
   templateUrl: './aside-projects.component.html',
   styleUrls: ['./aside-projects.component.scss'],
   standalone: true,
