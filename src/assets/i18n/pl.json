@@ -64,7 +64,7 @@
   },
   "projects": {
     "bible": {
-      "0": "Angular 11 zmigrowany do Angular 15",
+      "0": "Angular 15 (migracja z Angular 11)",
       "1": "Złożony, zagnieżdzony routing",
       "2": "Moduły leniwie ładowane (lazy loading)",
       "3": "W pełni oparta na stategii detekcji onPush",

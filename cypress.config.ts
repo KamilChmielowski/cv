@@ -8,6 +8,7 @@ export default defineConfig({
     baseUrl: 'http://localhost:4200',
   },
   env: {
-    githubUrl: 'https://github.com/KamilChmielowski/'
+    githubUrl: 'https://github.com/KamilChmielowski/',
+    linkedInUrl: 'https://www.linkedin.com/in/kamil-chmielowski-1540562a8/'
   }
 });
