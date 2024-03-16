@@ -1,7 +1,8 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import { filter, map, Subscription } from 'rxjs';
+import { filter, map } from 'rxjs';
 
 import { DomService } from '../../services/dom/dom.service';
 import { fadeAnimationTimeout } from './page-animation';
@@ -10,9 +11,7 @@ import { fadeAnimationTimeout } from './page-animation';
   selector: '[pageAnimation]',
   standalone: true,
 })
-export class PageAnimationDirective implements OnInit, AfterViewInit, OnDestroy {
-  private readonly subscription = new Subscription();
-
+export class PageAnimationDirective implements OnInit, AfterViewInit {
   private isScrollable = true;
   private maxClientHeight: number = 0;
   private prevScrollX = 0;
@@ -34,10 +33,6 @@ export class PageAnimationDirective implements OnInit, AfterViewInit, OnDestroy 
     this.maxClientHeight = this.elementRef.nativeElement.clientHeight;
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
   @HostListener('window:scroll', ['$event']) private onScroll(): void {
     if (!this.isScrollable) {
       this.domService.getWindow().scrollTo(this.prevScrollX, this.prevScrollY);
@@ -48,15 +43,14 @@ export class PageAnimationDirective implements OnInit, AfterViewInit, OnDestroy 
   }
 
   private observeNavigationEnd(): void {
-    this.subscription.add(
-      this.router.events.pipe(
-        filter(e => e instanceof NavigationEnd),
-        map(e => e as NavigationEnd),
-      ).subscribe(result => {
-        this.setPageHeightToMaxClient();
-        this.timeoutHandle = setTimeout(() => this.setDefaultPageHeight(result.url), fadeAnimationTimeout * 2);
-      })
-    );
+    this.router.events.pipe(
+      takeUntilDestroyed(),
+      filter(e => e instanceof NavigationEnd),
+      map(e => e as NavigationEnd),
+    ).subscribe(result => {
+      this.setPageHeightToMaxClient();
+      this.timeoutHandle = setTimeout(() => this.setDefaultPageHeight(result.url), fadeAnimationTimeout * 2);
+    });
   }
 
   private setPageHeightToMaxClient(): void {
