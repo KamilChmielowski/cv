@@ -50,10 +50,10 @@
     },
     "projects": {
       "title": "Projects",
-      "project-1": "Large application providing Greek and Hebrew study tools and concordances.",
-      "project-2": "Songbook in two versions: <a href=\"https://bezpiecznaprzystan.net\" target=\"_blank\">Bezpieczna Przystań</a>, <a href=\"https://spiewnikpielgrzyma.pl\" target=\"_blank\">Śpiewnik Pielgrzyma</a>",
-      "project-3": "My CV in two language versions.",
-      "project-4": "Complex app combining few public geolocation APIs.",
+      "project-1": "My CV in two language versions.",
+      "project-2": "Complex app combining few public geolocation APIs.",
+      "project-3": "Large application providing Greek and Hebrew study tools and concordances.",
+      "project-4": "Songbook in two versions: <a href=\"https://bezpiecznaprzystan.net\" target=\"_blank\">Bezpieczna Przystań</a>, <a href=\"https://spiewnikpielgrzyma.pl\" target=\"_blank\">Śpiewnik Pielgrzyma</a>",
       "link-to-github": "link do project repository on github"
     },
     "languages": {

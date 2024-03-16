@@ -1,41 +1,5 @@
 <article>
   <section>
-    <app-section-title title="Apologetyka Biblijna" icon="projects" class="title"></app-section-title>
-
-    <app-project-item
-      class="extra-space"
-      title="apologetykabiblijna.pl"
-      href="https://apologetykabiblijna.pl"
-      [chips]="['angular', 'material', 'mongo', 'express']">
-      <span [innerHTML]="'aside.projects.project-1' | translate"></span>
-    </app-project-item>
-  </section>
-
-  <app-features key="bible" [count]="11"></app-features>
-
-  <app-gallery [images]="BibleGallery"></app-gallery>
-
-  <div class="divider"></div>
-
-  <section>
-    <app-section-title title="Bezpieczna Przystań" icon="projects" class="title"></app-section-title>
-
-    <app-project-item
-      class="extra-space"
-      title="bezpiecznaprzystan.net"
-      href="https://bezpiecznaprzystan.net"
-      [chips]="['angular']">
-      <span [innerHTML]="'aside.projects.project-2' | translate"></span>
-    </app-project-item>
-  </section>
-
-  <app-features key="songbook" [count]="5"></app-features>
-
-  <app-gallery [images]="SongbookGallery"></app-gallery>
-
-  <div class="divider"></div>
-
-  <section>
     <app-section-title title="Curriculum vitae" icon="projects" class="title"></app-section-title>
 
     <app-project-item
@@ -45,7 +9,7 @@
       jasmineUrl="https://kamilchmielowski-cv-unit-tests.web.app/"
       [githubUrl]="environment.github.repoUrl + 'cv'"
       [chips]="['angular', 'jasmine', 'cypress']">
-      <span [innerHTML]="'aside.projects.project-3' | translate"></span>
+      <span [innerHTML]="'aside.projects.project-1' | translate"></span>
     </app-project-item>
 
     <app-project-lang *ngIf="projectsLanguages?.at(0) as value" [languages]="value"></app-project-lang>
@@ -66,7 +30,7 @@
       href="https://kamilchmielowski-weather.web.app/"
       [githubUrl]="environment.github.repoUrl + 'weather'"
       [chips]="['angular']">
-      <span [innerHTML]="'aside.projects.project-4' | translate"></span>
+      <span [innerHTML]="'aside.projects.project-2' | translate"></span>
     </app-project-item>
 
     <app-project-lang *ngIf="projectsLanguages?.at(1) as value" [languages]="value"></app-project-lang>
@@ -75,4 +39,40 @@
   <app-features key="weather" [count]="12"></app-features>
 
   <app-gallery [images]="WeatherGallery"></app-gallery>
+
+  <div class="divider"></div>
+
+  <section>
+    <app-section-title title="Apologetyka Biblijna" icon="projects" class="title"></app-section-title>
+
+    <app-project-item
+      class="extra-space"
+      title="apologetykabiblijna.pl"
+      href="https://apologetykabiblijna.pl"
+      [chips]="['angular', 'material', 'mongo', 'express']">
+      <span [innerHTML]="'aside.projects.project-3' | translate"></span>
+    </app-project-item>
+  </section>
+
+  <app-features key="bible" [count]="11"></app-features>
+
+  <app-gallery [images]="BibleGallery"></app-gallery>
+
+  <div class="divider"></div>
+
+  <section>
+    <app-section-title title="Bezpieczna Przystań" icon="projects" class="title"></app-section-title>
+
+    <app-project-item
+      class="extra-space"
+      title="bezpiecznaprzystan.net"
+      href="https://bezpiecznaprzystan.net"
+      [chips]="['angular']">
+      <span [innerHTML]="'aside.projects.project-4' | translate"></span>
+    </app-project-item>
+  </section>
+
+  <app-features key="songbook" [count]="5"></app-features>
+
+  <app-gallery [images]="SongbookGallery"></app-gallery>
 </article>
