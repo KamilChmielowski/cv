@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, DestroyRef, Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -20,6 +20,7 @@ export class PageAnimationDirective implements OnInit, AfterViewInit {
   private timeoutHandle!: NodeJS.Timeout;
 
   constructor(
+    private destroyRef: DestroyRef,
     private domService: DomService,
     private elementRef: ElementRef<HTMLElement>,
     private router: Router,
@@ -44,7 +45,7 @@ export class PageAnimationDirective implements OnInit, AfterViewInit {
 
   private observeNavigationEnd(): void {
     this.router.events.pipe(
-      takeUntilDestroyed(),
+      takeUntilDestroyed(this.destroyRef),
       filter(e => e instanceof NavigationEnd),
       map(e => e as NavigationEnd),
     ).subscribe(result => {
