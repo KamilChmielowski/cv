@@ -6,7 +6,9 @@ import { JasmineUtil } from '../../../../../utils/jasmine.util';
 import { ProgressBarComponent } from './progress-bar.component';
 
 @Component({
-  template: `<app-progress-bar>ng-content test</app-progress-bar>`
+  template: `<app-progress-bar>ng-content test</app-progress-bar>`,
+  standalone: true,
+  imports: [ProgressBarComponent]
 })
 class ProgressBarTestComponent {}
 
@@ -16,8 +18,7 @@ describe('ProgressBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProgressBarTestComponent],
-      imports: [ProgressBarComponent],
+      imports: [ProgressBarComponent, ProgressBarTestComponent],
     }).overrideComponent(ProgressBarComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();

@@ -5,7 +5,9 @@ import { ChipComponent } from './chip.component';
 import { JasmineUtil } from '../../../../../utils/jasmine.util';
 
 @Component({
-  template: `<app-chip>ng-content test</app-chip>`
+  template: `<app-chip>ng-content test</app-chip>`,
+  standalone: true,
+  imports: [ChipComponent],
 })
 class ChipTestComponent {}
 
@@ -15,9 +17,8 @@ describe('ChipComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ChipTestComponent],
-      imports: [ChipComponent],
-    });
+    imports: [ChipComponent, ChipTestComponent],
+  });
 
     fixture = TestBed.createComponent(ChipComponent);
     component = fixture.componentInstance;

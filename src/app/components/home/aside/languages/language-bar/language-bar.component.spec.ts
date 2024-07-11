@@ -5,13 +5,14 @@ import {
   TestBed,
   waitForAsync
 } from '@angular/core/testing';
-import { CommonModule } from '@angular/common';
 
 import { JasmineUtil } from '../../../../../utils/jasmine.util';
 import { LanguageBarComponent } from './language-bar.component';
 
 @Component({
-  template: `<app-language-bar>ng-content test</app-language-bar>`
+  template: `<app-language-bar value="5">ng-content test</app-language-bar>`,
+  standalone: true,
+  imports: [LanguageBarComponent],
 })
 class LanguageBarTestComponent {}
 
@@ -21,11 +22,10 @@ describe('LanguageBarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [LanguageBarTestComponent],
-      imports: [
-        CommonModule,
-        LanguageBarComponent
-      ],
+    imports: [
+      LanguageBarComponent,
+      LanguageBarTestComponent,
+    ],
     }).overrideComponent(LanguageBarComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();

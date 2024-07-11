@@ -1,13 +1,14 @@
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { JasmineUtil } from '../../../utils/jasmine.util';
 import { TimelineItemComponent } from './timeline-item.component';
 
 @Component({
-  template: `<app-timeline-item>ng-content test</app-timeline-item>`
+  template: `<app-timeline-item date="2019 - 2021" chip="(M.S.)" header="test">ng-content test</app-timeline-item>`,
+  standalone: true,
+  imports: [TimelineItemComponent],
 })
 class TimelineItemTestComponent {}
 
@@ -17,11 +18,10 @@ describe('TimelineItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TimelineItemTestComponent],
-      imports: [
-        CommonModule,
-        TimelineItemComponent,
-      ]
+    imports: [
+      TimelineItemComponent,
+      TimelineItemTestComponent,
+    ],
     }).overrideComponent(TimelineItemComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();

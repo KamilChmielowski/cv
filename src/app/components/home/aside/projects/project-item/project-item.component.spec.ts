@@ -6,7 +6,9 @@ import { JasmineUtil } from '../../../../../utils/jasmine.util';
 import { ProjectItemComponent } from './project-item.component';
 
 @Component({
-  template: `<app-project-item>ng-content test</app-project-item>`
+  template: `<app-project-item title="test" href="https://test.com">ng-content test</app-project-item>`,
+  standalone: true,
+  imports: [ProjectItemComponent],
 })
 class ProjectItemTestComponent {}
 
@@ -16,8 +18,10 @@ describe('ProjectItemComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProjectItemTestComponent],
-      imports: [JasmineUtil.moduleWithTranslations([ProjectItemComponent])],
+      imports: [JasmineUtil.moduleWithTranslations([
+        ProjectItemComponent,
+        ProjectItemTestComponent,
+      ])],
       providers: [JasmineUtil.svgIconSpyProvider()],
     }).overrideComponent(ProjectItemComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
