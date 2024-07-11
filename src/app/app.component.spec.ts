@@ -1,16 +1,21 @@
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
-import { TranslateService } from '@ngx-translate/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
 
-import { SvgIconRegistryService } from 'angular-svg-icon';
+import { provideAngularSvgIcon, SvgIconRegistryService } from 'angular-svg-icon';
+import { TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
-import { AppModule, HttpLoaderFactory } from './app.module';
 import { appIconsMap } from './app-icons-map';
+import { HttpLoaderFactory } from './app.config';
 import { JasmineUtil } from './utils/jasmine.util';
 import { Languages } from './components/header/change-lang/change-lang.component';
+import { routes } from './app.routes';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -22,9 +27,13 @@ describe('AppComponent', () => {
     svgIconRegistrySpy = jasmine.createSpyObj(['addSvg', 'getSvgByName']);
 
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [JasmineUtil.moduleWithTranslations([AppModule])],
+      imports: [JasmineUtil.moduleWithTranslations([])],
       providers: [
+        provideAngularSvgIcon(),
+        provideAnimations(),
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+        provideRouter(routes),
         { provide: SvgIconRegistryService, useValue: svgIconRegistrySpy }
       ],
     }).overrideComponent(AppComponent, {

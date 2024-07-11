@@ -1,15 +1,19 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideRouter, Router } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
-import { AppModule } from '../../app.module';
 import { DomService } from '../../services/dom/dom.service';
 import { fadeAnimationTimeout } from './page-animation';
 import { PageAnimationDirective } from './page-animation.directive';
-import { routes } from '../../app-routing.module';
+import { routes } from '../../app.routes';
+import { provideAngularSvgIcon } from 'angular-svg-icon';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { JasmineUtil } from '../../utils/jasmine.util';
+import { NavComponent } from '../../components/header/nav/nav.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 describe('PageAnimationDirective', () => {
   let component: AppComponent;
@@ -22,13 +26,16 @@ describe('PageAnimationDirective', () => {
     domMock = jasmine.createSpyObj('WindowService', ['getWindow' , 'isDesktop', 'remToPixels']);
 
     TestBed.configureTestingModule({
-      imports: [
-        AppModule,
+      imports: [JasmineUtil.moduleWithTranslations([
         PageAnimationDirective,
-        RouterTestingModule.withRoutes(routes),
-      ],
+      ])],
       providers: [
         PageAnimationDirective,
+        provideAngularSvgIcon(),
+        provideAnimations(),
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideRouter(routes),
         { provide: ElementRef, useValue: { nativeElement: { clientHeight: 400 } } },
         { provide: DomService, useValue: domMock }
       ]

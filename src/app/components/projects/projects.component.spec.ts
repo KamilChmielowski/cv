@@ -1,7 +1,7 @@
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,11 +23,11 @@ describe('ProjectsComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [JasmineUtil.moduleWithTranslations([
-        HttpClientTestingModule,
         ProjectsComponent,
       ])],
       providers: [
         JasmineUtil.svgIconSpyProvider(),
+        provideHttpClientTesting(),
         { provide: GithubService, useValue: githubServiceSpy },
       ],
     }).overrideComponent(ProjectsComponent, {

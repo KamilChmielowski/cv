@@ -1,9 +1,10 @@
+import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { ArticleComponent } from './article.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { JasmineUtil } from '../../../utils/jasmine.util';
-import { By } from '@angular/platform-browser';
 
 describe('ArticleComponent', () => {
   let component: ArticleComponent;
@@ -14,11 +15,12 @@ describe('ArticleComponent', () => {
       imports: [
         JasmineUtil.moduleWithTranslations([
           ArticleComponent,
-          HttpClientTestingModule,
         ]),
       ],
       providers: [
         JasmineUtil.svgIconSpyProvider(),
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
       ]
     });
     fixture = TestBed.createComponent(ArticleComponent);

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { HomeComponent } from './home.component';
 import { JasmineUtil } from '../../utils/jasmine.util';
@@ -12,9 +13,12 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       imports: [JasmineUtil.moduleWithTranslations([
         HomeComponent,
-        HttpClientTestingModule
       ])],
-      providers: [JasmineUtil.svgIconSpyProvider()],
+      providers: [
+        JasmineUtil.svgIconSpyProvider(),
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
     });
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;

@@ -6,7 +6,7 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { appIcons } from '../app-icons-map';
-import { routes } from '../app-routing.module';
+import { routes } from '../app.routes';
 import { ValidatorUtil } from './validator.util';
 
 export class JasmineUtil {

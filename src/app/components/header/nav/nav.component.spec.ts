@@ -1,13 +1,13 @@
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
 
 import { DomService } from '../../../services/dom/dom.service';
 import { JasmineUtil } from '../../../utils/jasmine.util';
 import { NavComponent } from './nav.component';
-import { routes } from '../../../app-routing.module';
+import { routes } from '../../../app.routes';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -19,12 +19,12 @@ describe('NavComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [JasmineUtil.moduleWithTranslations([
-        HttpClientTestingModule,
         NavComponent,
-        RouterTestingModule,
       ])],
       providers: [
         JasmineUtil.svgIconSpyProvider(),
+        provideHttpClientTesting(),
+        provideRouter(routes),
         { provide: DomService, useValue: serviceMock }
       ],
     }).overrideComponent(NavComponent, {

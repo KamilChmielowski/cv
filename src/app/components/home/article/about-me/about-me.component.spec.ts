@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { of } from 'rxjs';
 
@@ -20,10 +20,10 @@ describe('AboutMeComponent', () => {
     TestBed.configureTestingModule({
       imports: [JasmineUtil.moduleWithTranslations([
         AboutMeComponent,
-        HttpClientTestingModule,
       ])],
       providers: [
         JasmineUtil.svgIconSpyProvider(),
+        provideHttpClientTesting(),
         { provide: CurrentYearService, useValue: currentYearServiceSpy },
       ],
     }).overrideComponent(AboutMeComponent, {

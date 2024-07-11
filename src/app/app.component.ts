@@ -1,13 +1,15 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inject, OnInit } from '@angular/core';
-import { ChildrenOutletContexts } from '@angular/router';
+import { ChangeDetectionStrategy, Component, HostBinding, Inject, OnInit } from '@angular/core';
+import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 
 import { SvgIconRegistryService } from 'angular-svg-icon';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { appIconsMap } from './app-icons-map';
 import { fadeAnimation } from './directives/page-animation/page-animation';
+import { HeaderComponent } from './components/header/header.component';
 import { Languages } from './components/header/change-lang/change-lang.component';
+import { PageAnimationDirective } from './directives/page-animation/page-animation.directive';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,13 @@ import { Languages } from './components/header/change-lang/change-lang.component
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [fadeAnimation],
+  standalone: true,
+  imports: [
+    HeaderComponent,
+    PageAnimationDirective,
+    RouterOutlet,
+    TranslateModule,
+  ]
 })
 export class AppComponent implements OnInit {
   @HostBinding('class.starting-app') private startingApp = true;
@@ -22,7 +31,6 @@ export class AppComponent implements OnInit {
   readonly defaultLang = Languages.en;
 
   constructor(
-    private cdr: ChangeDetectorRef,
     private contexts: ChildrenOutletContexts,
     @Inject(DOCUMENT) private document: Document,
     private registry: SvgIconRegistryService,
