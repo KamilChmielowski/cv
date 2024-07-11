@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-timeline-item',
@@ -7,7 +6,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./timeline-item.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
 })
 export class TimelineItemComponent {
   @Input({ required: true }) chip = ''

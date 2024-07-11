@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-language-bar',
@@ -7,9 +6,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./language-bar.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    CommonModule,
-  ]
 })
 export class LanguageBarComponent {
   @Input({ required: true }) value = '0';

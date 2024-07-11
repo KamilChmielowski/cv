@@ -3,7 +3,11 @@
 </p>
 
 <div class="bar">
-  <span *ngFor="let _ of [].constructor(10); let i = index" class="rect">
-    <span *ngIf="i < +value" class="fill"></span>
-  </span>
+  @for (_ of [].constructor(10); track _; let i = $index) {
+    <span class="rect">
+      @if (i < +value) {
+        <span class="fill"></span>
+      }
+    </span>
+  }
 </div>

@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { SvgIconComponent } from 'angular-svg-icon';
@@ -16,7 +15,6 @@ import { SectionTitleComponent } from '../../section-title/section-title.compone
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     SectionTitleComponent,
     SvgIconComponent,
     TranslateModule,

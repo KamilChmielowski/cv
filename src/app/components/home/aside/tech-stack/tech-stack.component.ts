@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
@@ -9,7 +8,6 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     ProgressBarComponent,
   ]
 })

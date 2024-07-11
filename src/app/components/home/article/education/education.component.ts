@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -13,7 +12,6 @@ import { TimelineItemComponent } from '../../timeline-item/timeline-item.compone
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     SectionTitleComponent,
     TimelineItemComponent,
     TranslateModule,

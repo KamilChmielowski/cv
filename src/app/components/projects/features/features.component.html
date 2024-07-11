@@ -1,3 +1,5 @@
 <ul>
-  <li *ngFor="let i of count | array" [innerHTML]="'projects.' + key + '.' + i | translate"></li>
+  @for (i of count | array; track i) {
+    <li [innerHTML]="'projects.' + key + '.' + i | translate"></li>
+  }
 </ul>

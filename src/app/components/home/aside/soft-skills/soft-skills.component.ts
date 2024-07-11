@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -12,7 +11,6 @@ import { ChipComponent } from './chip/chip.component';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     ChipComponent,
     TranslateModule,
   ]

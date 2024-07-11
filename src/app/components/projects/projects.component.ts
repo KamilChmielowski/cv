@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 import { forkJoin } from 'rxjs';
@@ -23,7 +22,6 @@ import { SectionTitleComponent } from '../home/section-title/section-title.compo
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     FeaturesComponent,
     GalleryComponent,
     ProjectItemComponent,

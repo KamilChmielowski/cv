@@ -1,3 +1,5 @@
-<app-chip *ngFor="let key of chipTranslations">
-  {{ 'aside.soft-skills.' + key | translate }}
-</app-chip>
+@for (key of chipTranslations; track key) {
+  <app-chip>
+    {{ 'aside.soft-skills.' + key | translate }}
+  </app-chip>
+}

@@ -1,1 +1,3 @@
-<span *ngFor="let chip of chips" [className]="chip" data-cy="cy-item-chip">{{ chip | titlecase }}</span>
+@for (chip of chips; track chip) {
+  <span [className]="chip" data-cy="cy-item-chip">{{ chip | titlecase }}</span>
+}

@@ -7,7 +7,6 @@ import {
   HostListener,
   Input,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { SvgIconComponent } from 'angular-svg-icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,7 +21,6 @@ import { GalleryModel } from './gallery.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    CommonModule,
     SvgIconComponent,
     TranslateModule,
   ],

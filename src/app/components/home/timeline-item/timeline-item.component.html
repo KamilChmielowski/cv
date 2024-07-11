@@ -1,7 +1,9 @@
 <div class="content">
   <div class="desc">
     <p class="date">{{ date }}</p>
-    <p *ngIf="chip" class="chip">{{ chip }}</p>
+    @if (chip) {
+      <p class="chip">{{ chip }}</p>
+    }
   </div>
 
   <h3>{{ header }}</h3>
